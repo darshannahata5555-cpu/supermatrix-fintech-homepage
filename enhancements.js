@@ -9,7 +9,7 @@
   addMeta("theme-color","#2c3263");
   addMeta("og:site_name","SuperMatrix",true);
   addMeta("og:title",document.title,true);
-  addMeta("og:description",document.querySelector('meta[name="description"]')?.content||"Goal-based mutual fund investing with professional support.",true);
+  addMeta("og:description",document.querySelector('meta[name="description"]')?.content||"Explore mutual fund solutions, start your SIPs, and build wealth through disciplined investing.",true);
 
   function setupNavigation(){
     const standard=document.querySelector(".site-nav");
@@ -47,7 +47,7 @@
   function fixHomepageClaimsAndLinks(){
     if(!isHome)return;
     const badge=document.querySelector("#top h1")?.previousElementSibling;
-    if(badge)badge.lastChild.textContent=" Guidance-led · Goal-based investing";
+    if(badge)badge.lastChild.textContent=" AMFI Registered Mutual Fund Distributor";
     const stats=document.querySelector("#top sc-if");if(stats)stats.style.display="none";
     const statsLabel=[...document.querySelectorAll("#top div")].find(el=>el.children.length===0&&el.textContent.trim()==="Assets under advice");
     if(statsLabel?.parentElement?.parentElement)statsLabel.parentElement.parentElement.style.display="none";
@@ -57,9 +57,9 @@
       const arnText=[...document.querySelectorAll("span")].find(el=>el.textContent.includes("ARN: To be updated"));
       if(arnText?.parentElement?.parentElement)arnText.parentElement.parentElement.style.display="none";
     }
-    const title=document.querySelector("#top h1");if(title)title.innerHTML='Mutual fund investing with <span style="color:#0E4FA1">guidance at every step.</span>';
-    const intro=document.querySelector("#top h1 + p");if(intro)intro.textContent="Plan around real financial goals, explore mutual fund solutions, and get access to professional support throughout your investment journey.";
-    const primary=document.querySelector("#top .primary-cta");if(primary){primary.href="#contact";const text=[...primary.childNodes].find(n=>n.nodeType===3&&n.textContent.trim());if(text)text.textContent="Talk to the team "}
+    const title=document.querySelector("#top h1");if(title)title.innerHTML='Making Mutual Fund Investing <span style="color:#0E4FA1">Simple</span>';
+    const intro=document.querySelector("#top h1 + p");if(intro)intro.textContent="Explore mutual fund solutions, start your SIPs, and build wealth through disciplined investing.";
+    const primary=document.querySelector("#top .primary-cta");if(primary){primary.href="#contact";const text=[...primary.childNodes].find(n=>n.nodeType===3&&n.textContent.trim());if(text)text.textContent="Start Investing "}
     const knowledge=document.getElementById("knowledge");
     const knowledgeLinks=knowledge?[...knowledge.querySelectorAll('a[href="#"]')]:[];
     const destinations=["faq.html","product.html?product=elss","calculators.html?calculator=retirement","faq.html"];
@@ -131,12 +131,12 @@
   function addStructuredData(){
     if(document.querySelector('script[data-sm-schema]'))return;
     const script=document.createElement("script");script.type="application/ld+json";script.dataset.smSchema="";
-    script.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"SuperMatrix","description":"A goal-based mutual fund distribution initiative by Sarthi Group.","url":location.origin+location.pathname.replace(/[^/]*$/,""),"logo":new URL("./assets/supermatrix-logo.svg",location.href).href,"email":"support@supermatrix.in","telephone":"+91-22-26528671"});
+    script.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"SuperMatrix","description":"The technology-driven wealth management platform of the Sarthi Group, operated by Sarthi Financial Services Private Limited, an AMFI-Registered Mutual Fund Distributor.","url":location.origin+location.pathname.replace(/[^/]*$/,""),"logo":new URL("./assets/supermatrix-logo.svg",location.href).href,"email":"support@supermatrix.in","telephone":"+91-22-26528671"});
     document.head.appendChild(script);
   }
 
   function applyPageEnhancements(){
-    setupNavigation();addJourney();addOngoingSupport();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addProductGuide();addCalculatorGuidance();sanitiseUnverifiedRoutes();
+    setupNavigation();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
   }
   applyPageEnhancements();addMobileCta();addStructuredData();
   if(isHome){
