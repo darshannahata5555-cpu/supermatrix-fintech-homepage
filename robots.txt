@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://darshannahata5555-cpu.github.io/supermatrix-fintech-homepage/sitemap.xml
