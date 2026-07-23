@@ -35,13 +35,118 @@
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
   .rev { opacity: 0; animation: fadeUp .8s cubic-bezier(.16,.84,.44,1) both; }
+
+  /* Reference-inspired blue homepage refresh */
+  :root { --sm-blue: #2463D4; --sm-navy: #073474; --sm-pale: #EEF4FF; --sm-line: #D8E3F5; }
+  .sm-top-strip { display: none !important; }
+  .sm-header { background: rgba(255,255,255,.96) !important; border-color: #DDE6F3 !important; backdrop-filter: blur(16px); }
+  .sm-header-inner { max-width: 1160px !important; padding-top: 12px !important; padding-bottom: 12px !important; gap: 24px !important; }
+  .sm-brand-mark { background: linear-gradient(145deg,#174D9F,#2463D4) !important; border-radius: 10px !important; width: 40px; height: 40px; display: grid !important; place-items: center; grid-template-columns: none !important; }
+  .sm-brand-mark span { display: none !important; }
+  .sm-brand-mark:after { content: "↗"; color: #fff; font-size: 21px; font-weight: 400; transform: rotate(-18deg); }
+  .sm-brand-name { color: var(--sm-navy) !important; text-transform: uppercase; font-size: 20px !important; }
+  .sm-header nav { gap: 24px !important; font-size: 14px !important; }
+  .sm-header nav a { color: #071C3E !important; white-space: nowrap; }
+  .sm-header-actions .register { color: var(--sm-blue) !important; border: 1px solid var(--sm-blue); padding: 10px 18px; border-radius: 9px; }
+  .sm-header-actions .start { background: var(--sm-blue) !important; border-radius: 9px !important; }
+
+  #top { background: var(--sm-pale) !important; }
+  #top > div { min-height: 710px; max-width: 1160px !important; padding-top: 82px !important; padding-bottom: 82px !important; grid-template-columns: 1.05fr .95fr !important; }
+  #top > div > div:first-child > span:first-child,
+  #top sc-if,
+  #top .hero-secondary { display: none !important; }
+  #top h1 { color: var(--sm-navy) !important; font-size: 48px !important; line-height: 1.08 !important; max-width: 580px; margin-top: 0 !important; text-transform: capitalize; }
+  #top h1 span { color: var(--sm-blue) !important; }
+  #top p { color: #556B91 !important; font-size: 17px !important; max-width: 520px; }
+  #top .hero-primary { background: var(--sm-blue) !important; border-radius: 9px !important; box-shadow: 0 12px 28px -10px rgba(36,99,212,.5) !important; }
+  #top > div > div:nth-child(2) { display: flex; justify-content: center; align-items: center; min-height: 540px; }
+  #top > div > div:nth-child(2) > div:first-child { width: 246px; min-height: 505px; border: 9px solid #09254E !important; border-radius: 34px !important; padding: 18px !important; box-shadow: 0 30px 60px -25px rgba(7,52,116,.45) !important; z-index: 2; }
+  #top > div > div:nth-child(2):before { content: ""; position: absolute; right: 4px; bottom: 78px; width: 190px; height: 225px; background: linear-gradient(to top, #2463D4 0 58%, transparent 58%) 100% 100%/27px 100% no-repeat, linear-gradient(to top, #79A9F1 0 78%, transparent 78%) 68% 100%/27px 100% no-repeat, linear-gradient(to top, #A8C8F7 0 48%, transparent 48%) 36% 100%/27px 100% no-repeat, linear-gradient(to top, #77A7EF 0 62%, transparent 62%) 4% 100%/27px 100% no-repeat; opacity: .95; }
+  #top > div > div:nth-child(2):after { content: "↗"; position: absolute; right: 18px; top: 36px; color: #79A9F1; font-size: 76px; font-weight: 300; transform: rotate(-12deg); }
+  #top > div > div:nth-child(2) > div[style*="position: absolute"] { display: none !important; }
+
+  #solutions { background: var(--sm-pale) !important; color: var(--sm-navy) !important; }
+  #solutions > div { max-width: 1160px !important; padding-top: 76px !important; padding-bottom: 76px !important; }
+  #solutions > div > div:first-child { justify-content: center !important; text-align: center; }
+  #solutions > div > div:first-child > div { max-width: none !important; }
+  #solutions > div > div:first-child span,
+  #solutions > div > div:first-child p,
+  #solutions > div > div:first-child + a { display: none !important; }
+  #solutions h2 { color: var(--sm-navy) !important; font-size: 32px !important; margin: 0 !important; }
+  #solutions h2:after { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--sm-line); vertical-align: middle; margin-left: 18px; }
+  #solutions h2:before { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--sm-line); vertical-align: middle; margin-right: 18px; }
+  #solutions > div > div:last-child { margin-top: 46px !important; gap: 20px !important; }
+  #solutions > div > div:last-child > div { background: #fff !important; border: 1px solid var(--sm-line) !important; border-radius: 14px !important; padding: 26px 20px !important; min-height: 174px; color: var(--sm-navy) !important; }
+  #solutions h3 { color: var(--sm-navy) !important; font-family: 'Instrument Sans' !important; font-size: 16px !important; margin-top: 16px !important; }
+  #solutions p { color: #5A6D8D !important; }
+  #solutions svg { stroke: var(--sm-blue) !important; }
+  #solutions > div > div:last-child > div > svg { background: #EAF2FF; width: 52px; height: 52px; padding: 14px; border-radius: 11px; }
+  #solutions > div > div:last-child > div > span { display: none !important; }
+
+  #tools { max-width: 1160px !important; }
+  #tools > div:first-child > span { color: var(--sm-navy) !important; font-size: 30px !important; letter-spacing: 0 !important; text-transform: none !important; }
+  #tools > div:first-child > h2 { display: none; }
+
+  @media (max-width: 980px) {
+    .sm-header nav { display: none !important; }
+    .sm-header-actions .register { display: none; }
+    #top > div { grid-template-columns: 1fr !important; text-align: center; }
+    #top p { margin-left: auto !important; margin-right: auto !important; }
+    #top > div > div:first-child > div { justify-content: center; }
+    #solutions > div > div:last-child { grid-template-columns: repeat(2,1fr) !important; }
+  }
+  @media (max-width: 620px) {
+    .sm-header-actions .login { display: none; }
+    #top h1 { font-size: 40px !important; }
+    #top > div > div:nth-child(2):before,
+    #top > div > div:nth-child(2):after { display: none; }
+    #solutions > div > div:last-child { grid-template-columns: 1fr !important; }
+    #solutions h2:before, #solutions h2:after { display: none; }
+  }
+  .reference-hero { background: var(--sm-pale); min-height: 710px; display: flex; align-items: center; overflow: hidden; }
+  .reference-hero-inner { width: 100%; max-width: 1160px; margin: 0 auto; padding: 76px 28px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
+  .reference-copy h1 { color: var(--sm-navy); font-family: 'Bricolage Grotesque'; font-size: 50px; line-height: 1.06; letter-spacing: -.025em; max-width: 590px; }
+  .reference-copy h1 span { color: var(--sm-blue); }
+  .reference-copy p { color: #52698E; font-size: 17px; line-height: 1.55; max-width: 510px; margin-top: 24px; }
+  .reference-copy a { display: inline-flex; align-items: center; gap: 10px; color: #fff; background: var(--sm-blue); font-weight: 700; padding: 15px 25px; border-radius: 9px; margin-top: 32px; box-shadow: 0 14px 28px -14px rgba(36,99,212,.7); }
+  .reference-visual { min-height: 520px; position: relative; display: grid; place-items: center; }
+  .reference-phone { position: relative; z-index: 2; width: 230px; min-height: 500px; background: #fff; border: 9px solid #09254E; border-radius: 34px; padding: 20px 16px; box-shadow: 0 35px 70px -30px rgba(7,52,116,.45); }
+  .phone-greeting { color: #6A7A96; font-size: 12px; }
+  .phone-title { color: var(--sm-navy); font-size: 15px; font-weight: 700; margin: 4px 0 14px; }
+  .phone-card { background: #EFF4FC; border-radius: 12px; padding: 14px; margin-top: 10px; }
+  .phone-label { color: #647594; font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
+  .phone-value { color: var(--sm-navy); font-family: 'Space Grotesk'; font-size: 20px; font-weight: 700; margin-top: 5px; }
+  .phone-gain { color: #00A46C; font-size: 11px; font-weight: 700; margin-top: 5px; }
+  .phone-bars { height: 66px; display: flex; gap: 4px; align-items: end; margin-top: 10px; }
+  .phone-bars i { flex: 1; background: #9DBDF3; border-radius: 2px 2px 0 0; }
+  .phone-bars i:nth-child(1) { height: 18%; } .phone-bars i:nth-child(2) { height: 27%; } .phone-bars i:nth-child(3) { height: 24%; }
+  .phone-bars i:nth-child(4) { height: 34%; } .phone-bars i:nth-child(5) { height: 31%; } .phone-bars i:nth-child(6) { height: 52%; background:#2463D4; }
+  .phone-bars i:nth-child(7) { height: 62%; background:#2463D4; } .phone-bars i:nth-child(8) { height: 72%; background:#2463D4; }
+  .allocation { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+  .allocation-pie { width: 58px; height: 58px; border-radius: 50%; background: conic-gradient(#2463D4 0 65%,#79A9F1 65% 90%,#BDD3F8 90%); }
+  .allocation-copy { color: #596C8C; font-size: 10px; line-height: 1.8; }
+  .reference-market-bars { position: absolute; z-index: 1; right: 0; bottom: 62px; width: 210px; height: 235px; display: flex; align-items: end; gap: 12px; }
+  .reference-market-bars i { width: 27px; background: #A8C8F7; border-radius: 6px 6px 0 0; }
+  .reference-market-bars i:nth-child(1) { height: 40%; } .reference-market-bars i:nth-child(2) { height: 58%; }
+  .reference-market-bars i:nth-child(3) { height: 48%; } .reference-market-bars i:nth-child(4) { height: 76%; }
+  .reference-market-bars i:nth-child(5) { height: 100%; background: #4C85E3; }
+  .reference-arrow { position: absolute; right: 10px; top: 35px; font-size: 74px; color: #7DAAF0; transform: rotate(-13deg); }
+  @media (max-width: 900px) {
+    .reference-hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .reference-copy h1, .reference-copy p { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 620px) {
+    .reference-copy h1 { font-size: 40px; }
+    .reference-visual { transform: scale(.88); min-height: 470px; }
+    .reference-market-bars, .reference-arrow { display: none; }
+  }
 </style>
 </helmet>
 
 <div style="overflow-x: hidden;">
 
 <!-- ============ TOP STRIP ============ -->
-<div style="background: #0B1A2B; color: #AFC4BC; font-size: 12.5px; letter-spacing: .01em;">
+<div class="sm-top-strip" style="background: #0B1A2B; color: #AFC4BC; font-size: 12.5px; letter-spacing: .01em;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 8px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
     <span style="display: inline-flex; align-items: center; gap: 8px;">
       <span style="width: 6px; height: 6px; border-radius: 50%; background: #0E9E6E; animation: pulse 2.4s ease-in-out infinite;"></span>
@@ -55,37 +160,71 @@
 </div>
 
 <!-- ============ HEADER ============ -->
-<header style="position: sticky; top: 0; z-index: 50; background: rgba(245,248,246,.82); backdrop-filter: blur(14px); border-bottom: 1px solid #E4ECE8;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; gap: 32px;">
+<header class="sm-header" style="position: sticky; top: 0; z-index: 50; background: rgba(245,248,246,.82); backdrop-filter: blur(14px); border-bottom: 1px solid #E4ECE8;">
+  <div class="sm-header-inner" style="max-width: 1200px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; gap: 32px;">
     <a href="#top" style="display: flex; align-items: center; gap: 11px;">
-      <span style="display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; padding: 6px; background: #0B1A2B; border-radius: 10px;">
+      <span class="sm-brand-mark" style="display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; padding: 6px; background: #0B1A2B; border-radius: 10px;">
         <span style="width: 7px; height: 7px; border-radius: 2px; background: #0E9E6E;"></span>
         <span style="width: 7px; height: 7px; border-radius: 2px; background: #4ECCA0;"></span>
         <span style="width: 7px; height: 7px; border-radius: 2px; background: #4ECCA0;"></span>
         <span style="width: 7px; height: 7px; border-radius: 2px; background: #0E9E6E;"></span>
       </span>
       <span style="line-height: 1;">
-        <span style="display: block; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 21px; letter-spacing: -.02em; color: #0B1A2B;">SuperMatrix</span>
-        <span style="display: block; font-size: 10.5px; color: #7A8A85; letter-spacing: .04em; margin-top: 1px;">An initiative by Sarthi Group</span>
+        <span class="sm-brand-name" style="display: block; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 21px; letter-spacing: -.02em; color: #0B1A2B;">SuperMatrix</span>
+        <span style="display: block; font-size: 10.5px; color: #7A8A85; letter-spacing: .02em; margin-top: 1px;">An initiative by Sarthi Group<br>(AMFI Registered Mutual Fund Distributor)</span>
       </span>
     </a>
     <nav style="display: flex; gap: 26px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: #33443E;">
       <a href="#top" style="color: #33443E;">Home</a>
-      <a href="#why" style="color: #33443E;">About</a>
-      <a href="#solutions" style="color: #33443E;">Products</a>
+      <a href="#why" style="color: #33443E;">About Us</a>
+      <a href="#solutions" style="color: #33443E;">Products / Services⌄</a>
+      <a href="#contact" style="color: #33443E;">Legal Services<br>Tax Planning</a>
       <a href="#tools" style="color: #33443E;">Tools</a>
-      <a href="#knowledge" style="color: #33443E;">Knowledge</a>
-      <a href="#contact" style="color: #33443E;">Contact</a>
+      <a href="#knowledge" style="color: #33443E;">Knowledge Centre⌄</a>
+      <a href="#contact" style="color: #33443E;">Contact Us</a>
     </nav>
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <a href="#contact" style="font-size: 14.5px; font-weight: 600; color: #0B1A2B; padding: 9px 6px;">Login</a>
-      <a href="#contact" style="font-size: 14.5px; font-weight: 600; color: #fff; background: #0B1A2B; padding: 10px 18px; border-radius: 10px;">Start Investing</a>
+    <div class="sm-header-actions" style="display: flex; align-items: center; gap: 10px;">
+      <a class="login" href="#contact" style="font-size: 14px; font-weight: 600; color: #0B1A2B; padding: 9px 6px;">Login</a>
+      <a class="register" href="#contact" style="font-size: 14px; font-weight: 600;">Register</a>
+      <a class="start" href="#contact" style="font-size: 14px; font-weight: 600; color: #fff; background: #0B1A2B; padding: 11px 18px; border-radius: 10px;">Start Investing</a>
     </div>
   </div>
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="top" style="position: relative; background:
+<section id="top" class="reference-hero">
+  <div class="reference-hero-inner">
+    <div class="reference-copy">
+      <h1>Making Mutual Fund<br>Investing <span>Simple</span></h1>
+      <p>Explore mutual fund solutions, start your SIPs, and build wealth through disciplined investing.</p>
+      <a href="#solutions">Start Investing <span>→</span></a>
+    </div>
+    <div class="reference-visual">
+      <div class="reference-phone">
+        <div class="phone-greeting">Hello, Investor!</div>
+        <div class="phone-title">Portfolio Overview</div>
+        <div class="phone-card">
+          <div class="phone-label">Portfolio value</div>
+          <div class="phone-value">₹ 12,45,678</div>
+          <div class="phone-gain">▲ +12.46% (1 Year)</div>
+        </div>
+        <div class="phone-card">
+          <div class="phone-label">SIP dashboard</div>
+          <div style="display:flex;justify-content:space-between;margin-top:9px;color:#073474;font-size:11px;"><span>Monthly SIP<br><b style="font-size:16px;">₹ 25,000</b></span><span>Active SIPs<br><b style="font-size:16px;">12</b></span></div>
+          <div class="phone-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="phone-card">
+          <div class="phone-label">Investment allocation</div>
+          <div class="allocation"><div class="allocation-pie"></div><div class="allocation-copy">● Equity — 65%<br>● Debt — 25%<br>● Hybrid — 10%</div></div>
+        </div>
+      </div>
+      <div class="reference-market-bars"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="reference-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<section id="top-legacy" style="display:none; position: relative; background:
     radial-gradient(60% 55% at 82% 20%, rgba(14,158,110,.10), transparent 70%),
     radial-gradient(circle at 1px 1px, rgba(11,26,43,.055) 1px, transparent 0) 0 0/26px 26px,
     #F5F8F6;">
@@ -97,17 +236,17 @@
         SEBI-compliant · AMFI Registered Distributor
       </span>
       <h1 class="rev" style="animation-delay: .14s; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 60px; line-height: 1.02; letter-spacing: -.03em; margin: 22px 0 0; color: #0B1A2B; text-wrap: balance;">
-        Making mutual fund investing <span style="color: #0E9E6E;">simple.</span>
+        Making Mutual Fund<br>Investing <span style="color: #0E9E6E;">Simple</span>
       </h1>
       <p class="rev" style="animation-delay: .22s; font-size: 18.5px; line-height: 1.6; color: #465A52; max-width: 520px; margin: 22px 0 0;">
-        Explore curated mutual fund solutions, start your SIPs, and build lasting wealth through disciplined, goal-based investing.
+        Explore mutual fund solutions, start your SIPs, and build wealth through disciplined investing.
       </p>
       <div class="rev" style="animation-delay: .3s; display: flex; gap: 14px; margin: 34px 0 0; flex-wrap: wrap;">
-        <a href="#tools" style="display: inline-flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 600; color: #fff; background: #0E9E6E; padding: 15px 26px; border-radius: 12px; box-shadow: 0 12px 28px -8px rgba(14,158,110,.55);">
+        <a class="hero-primary" href="#tools" style="display: inline-flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 600; color: #fff; background: #0E9E6E; padding: 15px 26px; border-radius: 12px; box-shadow: 0 12px 28px -8px rgba(14,158,110,.55);">
           Start Investing
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#tools" style="display: inline-flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 600; color: #0B1A2B; background: #fff; border: 1px solid #DCE6E1; padding: 15px 24px; border-radius: 12px;">
+        <a class="hero-secondary" href="#tools" style="display: inline-flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 600; color: #0B1A2B; background: #fff; border: 1px solid #DCE6E1; padding: 15px 24px; border-radius: 12px;">
           Try the SIP Calculator
         </a>
       </div>
@@ -248,7 +387,7 @@
     <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
       <div style="max-width: 620px;">
         <span style="font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #4ECCA0;">Investment Solutions</span>
-        <h2 style="font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -.025em; margin: 14px 0 0; text-wrap: balance;">Every financial product, in one place</h2>
+        <h2 style="font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -.025em; margin: 14px 0 0; text-wrap: balance;">Investment Solutions</h2>
       </div>
       <a href="#contact" style="color: #9FD8C4; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Explore all products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FD8C4" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
