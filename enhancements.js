@@ -154,8 +154,24 @@
     document.head.appendChild(script);
   }
 
+  function addScrollMotion(){
+    if(!isHome||document.documentElement.dataset.smMotion)return;
+    document.documentElement.dataset.smMotion="ready";
+    const targets=document.querySelectorAll("#why>div:last-child>div,#solutions>div:last-child>div:last-child>a,#tools>div:last-child>a,#knowledge>div>div:last-child>a");
+    targets.forEach(el=>el.classList.add("sm-reveal"));
+    if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){
+      targets.forEach(el=>el.classList.add("sm-inview"));return;
+    }
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add("sm-inview");observer.unobserve(entry.target)}
+      });
+    },{threshold:.14,rootMargin:"0px 0px -30px"});
+    targets.forEach(el=>observer.observe(el));
+  }
+
   function applyPageEnhancements(){
-    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
+    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();addScrollMotion();
   }
   applyPageEnhancements();addMobileCta();addStructuredData();
   if(isHome){
