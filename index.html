@@ -76,12 +76,16 @@
   #solutions h2:after { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--sm-line); vertical-align: middle; margin-left: 18px; }
   #solutions h2:before { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--sm-line); vertical-align: middle; margin-right: 18px; }
   #solutions > div > div:last-child { margin-top: 46px !important; gap: 20px !important; }
-  #solutions > div > div:last-child > div { background: #fff !important; border: 1px solid var(--sm-line) !important; border-radius: 14px !important; padding: 26px 20px !important; min-height: 174px; color: var(--sm-navy) !important; }
+  #solutions > div > div:last-child > div,
+  #solutions > div > div:last-child > a { background: #fff !important; border: 1px solid var(--sm-line) !important; border-radius: 14px !important; padding: 26px 20px !important; min-height: 174px; color: var(--sm-navy) !important; display: block; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  #solutions > div > div:last-child > a:hover { transform: translateY(-4px); border-color: #99B9ED !important; box-shadow: 0 18px 36px -24px rgba(7,52,116,.5); }
   #solutions h3 { color: var(--sm-navy) !important; font-family: 'Instrument Sans' !important; font-size: 16px !important; margin-top: 16px !important; }
   #solutions p { color: #5A6D8D !important; }
   #solutions svg { stroke: var(--sm-blue) !important; }
-  #solutions > div > div:last-child > div > svg { background: #EAF2FF; width: 52px; height: 52px; padding: 14px; border-radius: 11px; }
-  #solutions > div > div:last-child > div > span { display: none !important; }
+  #solutions > div > div:last-child > div > svg,
+  #solutions > div > div:last-child > a > svg { background: #EAF2FF; width: 52px; height: 52px; padding: 14px; border-radius: 11px; }
+  #solutions > div > div:last-child > div > span,
+  #solutions > div > div:last-child > a > span { display: none !important; }
 
   #tools { max-width: 1160px !important; }
   #tools > div:first-child > span { color: var(--sm-navy) !important; font-size: 30px !important; letter-spacing: 0 !important; text-transform: none !important; }
@@ -389,50 +393,50 @@
         <span style="font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #4ECCA0;">Investment Solutions</span>
         <h2 style="font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 42px; line-height: 1.08; letter-spacing: -.025em; margin: 14px 0 0; text-wrap: balance;">Investment Solutions</h2>
       </div>
-      <a href="#contact" style="color: #9FD8C4; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Explore all products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FD8C4" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="products.html" style="color: #9FD8C4; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Explore all products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FD8C4" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 46px;">
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
+      <a href="product.html?product=mutual-funds" aria-label="Learn more about Mutual Funds" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">Mutual Funds</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Equity, Debt &amp; Hybrid funds</p>
-      </div>
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=sip" aria-label="Learn more about SIP" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M8 14l2 2 4-4"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">SIP</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Monthly disciplined investing</p>
-      </div>
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=swp" aria-label="Learn more about SWP" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">SWP</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Systematic withdrawal plan</p>
-      </div>
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=fof" aria-label="Learn more about Fund of Funds" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">FOF</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Fund of Funds</p>
-      </div>
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px; position: relative;">
+      </a>
+      <a href="product.html?product=elss" aria-label="Learn more about ELSS" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px; position: relative;">
         <span style="position: absolute; top: 16px; right: 16px; font-size: 10.5px; font-weight: 700; color: #0B1A2B; background: #4ECCA0; padding: 3px 8px; border-radius: 99px;">TAX SAVING</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><path d="M19 5L5 19M9 6.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM20 17.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">ELSS</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Tax-saving mutual funds</p>
-      </div>
-      <div style="background: rgba(192,138,45,.1); border: 1px solid rgba(192,138,45,.35); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=pms-equity" aria-label="Learn more about PMS Equity" style="background: rgba(192,138,45,.1); border: 1px solid rgba(192,138,45,.35); border-radius: 16px; padding: 22px;">
         <span style="font-size: 10.5px; font-weight: 700; color: #E7B85E; letter-spacing: .05em;">PREMIUM</span>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 8px 0 6px;">PMS — Equity</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #C9B593;">Professionally managed equity portfolios</p>
-      </div>
-      <div style="background: rgba(192,138,45,.1); border: 1px solid rgba(192,138,45,.35); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=pms-debt" aria-label="Learn more about PMS Debt" style="background: rgba(192,138,45,.1); border: 1px solid rgba(192,138,45,.35); border-radius: 16px; padding: 22px;">
         <span style="font-size: 10.5px; font-weight: 700; color: #E7B85E; letter-spacing: .05em;">PREMIUM</span>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 8px 0 6px;">PMS — Debt</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #C9B593;">Professionally managed debt portfolios</p>
-      </div>
-      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
+      </a>
+      <a href="product.html?product=goal-planning" aria-label="Learn more about Goal-Based Planning" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 22px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECCA0" stroke-width="1.7"><path d="M5 3v18M5 4h11l-2 4 2 4H5"/></svg>
         <h3 style="font-family: 'Bricolage Grotesque'; font-weight: 600; font-size: 18px; margin: 16px 0 6px;">Goal-Based Planning</h3>
         <p style="font-size: 14px; line-height: 1.5; color: #A6B8B0;">Home, education, marriage &amp; retirement</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
