@@ -1,0 +1,68 @@
+.calc-workbench{margin-top:0}
+.calc-grid{margin-top:42px}
+.calc-range{display:none}
+
+@media(max-width:560px){
+  .calc-page{padding-top:22px}
+  .calc-workbench{margin-top:0;border-radius:20px}
+  .calc-form-panel{padding:24px 20px 22px}
+  .calc-form-panel h2{font-size:28px;line-height:1.08;margin:8px 0 9px}
+  .calc-form-panel>p{font-size:14px;line-height:1.5;margin:0 0 20px}
+  .calc-fields{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid #e5ecf6}
+  .calc-field,.calc-field:first-child{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 132px;
+    align-items:center;
+    gap:8px 14px;
+    grid-column:auto;
+    padding:13px 0 12px;
+    border-bottom:1px solid #e5ecf6
+  }
+  .calc-field label{font-size:12.5px;line-height:1.3;color:#303a60}
+  .input-wrap{height:40px;border-color:#d6e1ef;background:#f6f9fd}
+  .calc-input{width:0;flex:1 1 0;padding:9px 7px;font-size:14px;font-weight:600}
+  .input-affix{padding-left:10px;font-size:12px}
+  .input-affix.suffix{padding-right:10px;font-size:11px;line-height:1;white-space:nowrap;text-align:right}
+  .calc-range{
+    display:block;
+    grid-column:1/-1;
+    width:100%;
+    height:4px;
+    margin:3px 0 1px;
+    appearance:none;
+    border:0;
+    border-radius:99px;
+    background:linear-gradient(to right,#1760b7 0 var(--range-progress,0%),#dfe8f3 var(--range-progress,0%) 100%);
+    cursor:pointer
+  }
+  .calc-range::-webkit-slider-thumb{
+    appearance:none;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#fff;
+    border:4px solid #1760b7;
+    box-shadow:0 2px 7px rgba(24,58,103,.25)
+  }
+  .calc-range::-moz-range-thumb{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    border:4px solid #1760b7
+  }
+  .calc-submit{width:100%;margin-top:18px;padding:13px}
+  .calc-result{min-height:0;padding:25px 20px}
+  .result-label{font-size:12px}
+  .result-primary{font-size:35px;margin:7px 0 20px}
+  .result-list{gap:11px;padding-top:17px}
+  .result-note{margin:18px 0 14px}
+  .calc-grid{margin-top:28px}
+  .sm-chat-toggle{width:46px;min-width:46px;height:46px;border-radius:15px}
+  .sm-chat-toggle svg{width:23px;height:23px}
+}
+
+@media(max-width:360px){
+  .calc-form-panel{padding-left:16px;padding-right:16px}
+  .calc-field,.calc-field:first-child{grid-template-columns:minmax(0,1fr) 120px;gap:8px 10px}
+}
