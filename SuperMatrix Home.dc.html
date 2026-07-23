@@ -49,17 +49,6 @@
   .primary-cta:hover { color:#fff; transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(14,79,161,.75) !important; }
   .secondary-cta { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease !important; }
   .secondary-cta:hover { color:#2C3263; transform: translateY(-2px); border-color:#9DBBE2 !important; box-shadow:0 12px 24px -18px rgba(44,50,99,.55); }
-  .hero-visual { isolation:isolate; padding: 30px 18px; }
-  .hero-visual::before { content:""; position:absolute; z-index:-2; width:430px; height:430px; right:-22px; top:50%; transform:translateY(-50%); border-radius:50%; background:linear-gradient(145deg,rgba(14,79,161,.16),rgba(79,141,218,.04)); box-shadow:inset 0 0 0 1px rgba(14,79,161,.07); }
-  .hero-visual::after { content:""; position:absolute; z-index:-1; width:320px; height:320px; right:34px; top:50%; transform:translateY(-50%); border:1px dashed rgba(14,79,161,.2); border-radius:50%; animation:spinRing 30s linear infinite; }
-  @keyframes spinRing { to { transform:translateY(-50%) rotate(360deg); } }
-  .hero-dashboard { position:relative; z-index:2; background:linear-gradient(145deg,#fff 0%,#FBFCFF 100%) !important; border-color:rgba(14,79,161,.16) !important; box-shadow:0 38px 85px -36px rgba(44,50,99,.48),0 10px 28px -20px rgba(14,79,161,.35) !important; }
-  .hero-dashboard::before { content:""; position:absolute; inset:0; pointer-events:none; border-radius:22px; background:linear-gradient(120deg,rgba(255,255,255,.7),transparent 35%); }
-  .hero-dashboard > svg { position:relative; border-radius:14px; background:
-    linear-gradient(to right,rgba(14,79,161,.055) 1px,transparent 1px) 0 0/68px 100%,
-    linear-gradient(to bottom,rgba(14,79,161,.055) 1px,transparent 1px) 0 0/100% 34px; }
-  .metric-chip { z-index:4; border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(10px); }
-  .gain-chip { box-shadow:0 18px 40px -14px rgba(44,50,99,.38) !important; }
   #why > div:last-child > div, #knowledge > div > div:last-child > a, #tools > div:last-child > a { transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
   #why > div:last-child > div:hover, #knowledge > div > div:last-child > a:hover, #tools > div:last-child > a:hover { transform:translateY(-5px); border-color:#B7CBE7 !important; box-shadow:0 22px 38px -28px rgba(44,50,99,.5); }
   #solutions a[href*="product.html"] { transition:transform .22s ease,border-color .22s ease,background .22s ease; }
@@ -237,8 +226,8 @@
     </div>
 
     <!-- Right: animated dashboard -->
-    <div class="hero-visual rev" style="animation-delay: .3s; position: relative;">
-      <div class="hero-dashboard" style="background: #fff; border: 1px solid #DDE5F1; border-radius: 22px; padding: 26px; box-shadow: 0 30px 70px -30px rgba(44,50,99,.28);">
+    <div class="rev" style="animation-delay: .3s; position: relative;">
+      <div style="background: #fff; border: 1px solid #DDE5F1; border-radius: 22px; padding: 26px; box-shadow: 0 30px 70px -30px rgba(44,50,99,.28);">
         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
           <div>
             <div style="font-size: 13px; color: #6F7894; font-weight: 500;">Portfolio value</div>
@@ -278,11 +267,11 @@
         </div>
       </div>
       <!-- floating chips -->
-      <div class="metric-chip sip-chip" style="position: absolute; top: -22px; right: -14px; background: #2C3263; color: #fff; padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px -12px rgba(44,50,99,.5); animation: floatY 5s ease-in-out infinite;">
+      <div style="position: absolute; top: -22px; right: -14px; background: #2C3263; color: #fff; padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px -12px rgba(44,50,99,.5); animation: floatY 5s ease-in-out infinite;">
         <div style="font-size: 11px; color: #A9C6EA; font-weight: 500;">Monthly SIP</div>
         <div style="font-family: 'Space Grotesk'; font-weight: 700; font-size: 19px;">&#8377;10,000</div>
       </div>
-      <div class="metric-chip gain-chip" style="position: absolute; bottom: -20px; left: -18px; background: #fff; border: 1px solid #DDE5F1; padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px -14px rgba(44,50,99,.28); display: flex; align-items: center; gap: 11px; animation: floatY2 6s ease-in-out infinite;">
+      <div style="position: absolute; bottom: -20px; left: -18px; background: #fff; border: 1px solid #DDE5F1; padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px -14px rgba(44,50,99,.28); display: flex; align-items: center; gap: 11px; animation: floatY2 6s ease-in-out infinite;">
         <span style="width: 34px; height: 34px; border-radius: 10px; background: #EAF2FC; display: grid; place-items: center;">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E4FA1" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </span>
