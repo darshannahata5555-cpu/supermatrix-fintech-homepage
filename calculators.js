@@ -9,13 +9,14 @@
       .calc-form-panel{padding:24px 20px 20px}
       .calc-form-panel h2{font-size:27px;line-height:1.08;margin:8px 0 10px}
       .calc-form-panel>p{font-size:14px;line-height:1.5;margin-bottom:20px}
-      .calc-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 10px}
-      .calc-field:first-child{grid-column:1/-1}
-      .calc-field{gap:6px}
-      .calc-field label{font-size:11.5px;line-height:1.3}
-      .calc-input{padding:11px 9px;font-size:14px}
-      .input-affix{padding-left:10px;font-size:13px}
-      .input-affix.suffix{padding-right:10px;font-size:12px;line-height:1.05;text-align:right}
+      .calc-fields{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid #e6edf6}
+      .calc-field:first-child{grid-column:auto}
+      .calc-field{display:grid;grid-template-columns:minmax(0,1fr) minmax(138px,160px);align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #e6edf6}
+      .calc-field label{font-size:12px;line-height:1.3;color:#303a60}
+      .input-wrap{height:42px;border-color:#d6e1ef;background:#f6f9fd}
+      .calc-input{width:0;flex:1 1 0;padding:10px 8px;font-size:14px}
+      .input-affix{padding-left:10px;font-size:12px}
+      .input-affix.suffix{padding-right:10px;font-size:11px;line-height:1;white-space:nowrap;text-align:right}
       .calc-submit{margin-top:18px}
       .calc-result{min-height:0;padding:25px 20px}
       .result-primary{font-size:34px;margin-bottom:20px}
@@ -23,8 +24,8 @@
       .calc-grid{margin-top:28px}
     }
     @media(max-width:360px){
-      .calc-fields{grid-template-columns:1fr}
-      .calc-field:first-child{grid-column:auto}
+      .calc-form-panel{padding-left:16px;padding-right:16px}
+      .calc-field{grid-template-columns:minmax(0,1fr) 130px;gap:8px}
     }`;
   document.head.appendChild(layoutStyle);
   const configs = {
