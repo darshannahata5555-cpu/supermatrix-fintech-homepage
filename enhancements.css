@@ -33,15 +33,18 @@
 .sm-nav-dropdown a:hover,.sm-nav-dropdown a:focus{background:#eaf2fc;color:#0e4fa1!important}
 @media(min-width:851px){.sm-knowledge-menu:hover .sm-nav-dropdown,.sm-knowledge-menu:focus-within .sm-nav-dropdown{display:block}.sm-knowledge-menu:not([open]) .sm-nav-dropdown{display:none}.sm-knowledge-menu:hover .sm-nav-dropdown{display:block}}
 
-@media(min-width:901px) and (max-width:1250px){
+.home-nav,.home-nav .home-links,.home-nav .home-actions{min-width:0}
+.home-nav .home-links>a,.home-nav .home-actions>a,.home-nav .sm-knowledge-menu summary,.home-nav>a span{white-space:nowrap!important}
+.site-nav .nav-links>a,.site-nav .nav-cta,.site-nav .brand span{white-space:nowrap}
+
+@media(min-width:1051px) and (max-width:1350px){
   .home-nav{padding-left:20px!important;padding-right:20px!important;gap:18px!important}
-  .home-nav .home-links{gap:17px!important;white-space:nowrap}
-  .home-nav .home-links>a{white-space:nowrap}
+  .home-nav .home-links{gap:16px!important;white-space:nowrap;font-size:14px!important}
   .home-nav .home-actions{gap:8px!important}
   .home-nav .home-actions>a:nth-child(-n+2){display:none!important}
 }
 
-@media(max-width:900px){
+@media(max-width:1050px){
   .home-nav{flex-wrap:wrap!important;padding:11px 18px!important;gap:12px!important}
   .home-nav>.sm-menu-button{display:grid;place-items:center;margin-left:auto}
   .home-links{display:none!important;order:5;width:100%;margin:4px 0 0!important;padding:8px 0 2px;border-top:1px solid #dce5f2}
