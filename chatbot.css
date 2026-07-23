@@ -1,0 +1,114 @@
+.sm-chatbot {
+  --chat-primary: #0E4FA1;
+  --chat-navy: #2C3263;
+  --chat-blue: #4F8DDA;
+  --chat-bg: #F5F7FC;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+}
+
+.sm-chat-toggle {
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--chat-primary), #1768C5);
+  box-shadow: 0 18px 38px -12px rgba(14, 79, 161, .65);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sm-chat-toggle:hover { transform: translateY(-3px); box-shadow: 0 22px 42px -12px rgba(14, 79, 161, .75); }
+.sm-chat-toggle svg { width: 27px; height: 27px; }
+
+.sm-chat-window {
+  position: absolute;
+  right: 0;
+  bottom: 72px;
+  width: min(370px, calc(100vw - 28px));
+  height: min(590px, calc(100vh - 110px));
+  display: none;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #D8E2EF;
+  border-radius: 22px;
+  box-shadow: 0 30px 80px -28px rgba(44, 50, 99, .55);
+}
+
+.sm-chatbot.is-open .sm-chat-window { display: grid; animation: smChatOpen .22s ease-out both; }
+@keyframes smChatOpen { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+
+.sm-chat-header {
+  padding: 17px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--chat-navy), #343D78);
+}
+
+.sm-chat-avatar {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.sm-chat-avatar img { width: 100%; height: 100%; object-fit: contain; }
+.sm-chat-title { font-weight: 700; font-size: 15px; }
+.sm-chat-status { margin-top: 2px; color: #C9D9EE; font-size: 11.5px; }
+.sm-chat-close { margin-left: auto; border: 0; background: transparent; color: #fff; font-size: 24px; cursor: pointer; line-height: 1; }
+
+.sm-chat-messages {
+  padding: 18px;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(44, 50, 99, .045) 1px, transparent 0) 0 0/20px 20px,
+    var(--chat-bg);
+}
+
+.sm-chat-row { display: flex; margin-bottom: 12px; }
+.sm-chat-row.user { justify-content: flex-end; }
+.sm-chat-bubble { max-width: 86%; padding: 11px 13px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; }
+.sm-chat-row.bot .sm-chat-bubble { color: #394261; background: #fff; border: 1px solid #DDE5F1; border-bottom-left-radius: 5px; }
+.sm-chat-row.user .sm-chat-bubble { color: #fff; background: var(--chat-primary); border-bottom-right-radius: 5px; }
+.sm-chat-bubble a { color: var(--chat-primary); font-weight: 700; text-decoration: none; }
+.sm-chat-note { display: block; margin-top: 7px; color: #75809C; font-size: 11px; }
+
+.sm-chat-suggestions { display: flex; flex-wrap: wrap; gap: 7px; margin: 4px 0 14px; }
+.sm-chat-suggestion {
+  border: 1px solid #BFD1E9;
+  border-radius: 99px;
+  padding: 7px 10px;
+  color: var(--chat-primary);
+  background: #fff;
+  font: 600 11.5px/1.2 "Instrument Sans", sans-serif;
+  cursor: pointer;
+}
+.sm-chat-suggestion:hover { background: #EAF2FC; }
+
+.sm-chat-form { padding: 12px; display: flex; gap: 8px; background: #fff; border-top: 1px solid #DDE5F1; }
+.sm-chat-input { min-width: 0; flex: 1; border: 1px solid #D8E2EF; border-radius: 12px; padding: 11px 12px; color: #2C3263; background: #F9FBFE; font: 14px "Instrument Sans", sans-serif; outline: none; }
+.sm-chat-input:focus { border-color: var(--chat-blue); box-shadow: 0 0 0 3px rgba(79, 141, 218, .13); }
+.sm-chat-send { width: 42px; flex: none; border: 0; border-radius: 12px; color: #fff; background: var(--chat-primary); cursor: pointer; font-size: 17px; }
+
+@media (max-width: 600px) {
+  .sm-chatbot { right: 14px; bottom: 14px; }
+  .sm-chat-toggle { width: 54px; height: 54px; border-radius: 17px; }
+  .sm-chat-window { position: fixed; inset: 10px; width: auto; height: auto; max-height: none; border-radius: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sm-chatbot *, .sm-chatbot *::before, .sm-chatbot *::after { animation: none !important; transition: none !important; }
+}
