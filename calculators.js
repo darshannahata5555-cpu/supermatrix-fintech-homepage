@@ -7,6 +7,15 @@
     education:{title:"Child Education Planner",description:"Plan for the inflation-adjusted cost of your child's higher education.",fields:[["cost","Education cost today",2000000,"₹",""],["years","Years until education",12,"","years"],["inflation","Education inflation",8,"","% p.a."],["rate","Expected return",12,"","% p.a."]],calculate:goalResult},
     home:{title:"Dream Home Planner",description:"Estimate the future home cost and monthly investment required for the down payment.",fields:[["cost","Home price today",10000000,"₹",""],["downPayment","Target down payment",20,"","%"],["years","Years until purchase",8,"","years"],["inflation","Property price inflation",5,"","% p.a."],["rate","Expected return",12,"","% p.a."]],calculate:v=>{const futureCost=v.cost*Math.pow(1+v.inflation/100,v.years),target=futureCost*v.downPayment/100,monthly=monthlyForTarget(target,v.years,v.rate);return["Required monthly investment",monthly,[["Estimated future home price",futureCost],["Target down payment",target]]]}},
   };
+  try {
+    const saved=JSON.parse(localStorage.getItem("supermatrix_admin_settings_v1")||"null");
+    const defaults=saved?.calculators;
+    if(defaults) configs.sip.fields.forEach(field=>{
+      if(field[0]==="monthly" && Number(defaults.sipAmount)>0) field[2]=Number(defaults.sipAmount);
+      if(field[0]==="years" && Number(defaults.sipYears)>0) field[2]=Number(defaults.sipYears);
+      if(field[0]==="rate" && Number(defaults.sipRate)>0) field[2]=Number(defaults.sipRate);
+    });
+  } catch {}
   function monthlyForTarget(target,years,rate){const n=years*12,r=rate/1200,factor=r?((Math.pow(1+r,n)-1)/r)*(1+r):n;return factor?target/factor:0}
   function goalResult(v){const target=v.cost*Math.pow(1+v.inflation/100,v.years),monthly=monthlyForTarget(target,v.years,v.rate);return["Required monthly investment",monthly,[["Inflation-adjusted target",target],["Goal timeline",v.years+" years"]]]}
   function money(value){return new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(Math.max(0,value||0))}

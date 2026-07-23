@@ -1,4 +1,9 @@
 (() => {
+  if (!document.querySelector('script[src$="site-config.js"]')) {
+    const configScript=document.createElement("script");
+    configScript.src="./site-config.js";
+    document.head.appendChild(configScript);
+  }
   const CONTACT_PHONE_DISPLAY = "022-26528671 / 72";
   const CONTACT_PHONE_LINK = "02226528671";
   const CONTACT_EMAIL = "support@supermatrix.in";
@@ -75,6 +80,8 @@
 
   function buildChatbot() {
     if (document.querySelector(".sm-chatbot")) return;
+    let adminGreeting="";
+    try { adminGreeting=JSON.parse(localStorage.getItem("supermatrix_admin_settings_v1")||"null")?.chatbot?.chatbotGreeting||""; } catch {}
     const root=document.createElement("div");
     root.className="sm-chatbot";
     root.innerHTML=`
@@ -143,7 +150,7 @@
       root.classList.toggle("is-open",open); toggle.setAttribute("aria-expanded",String(open)); toggle.setAttribute("aria-label",open?"Close FAQ assistant":"Open FAQ assistant");
       if(open) {
         if(!messages.children.length) {
-          addMessage("Hi! I’m the SuperMatrix FAQ assistant. What would you like to understand?","bot");
+          addMessage(adminGreeting||"Hi! I’m the SuperMatrix FAQ assistant. What would you like to understand?","bot");
           addSuggestions(["How do I start investing?","Explore investment products","Charges & Regular Plans","Contact support"]);
         }
         window.setTimeout(()=>input.focus(),50);
