@@ -1,6 +1,31 @@
 (() => {
   const layoutStyle=document.createElement("style");
-  layoutStyle.textContent=".calc-workbench{margin-top:0}.calc-grid{margin-top:42px}@media(max-width:560px){.calc-grid{margin-top:28px}}";
+  layoutStyle.textContent=`
+    .calc-workbench{margin-top:0}
+    .calc-grid{margin-top:42px}
+    @media(max-width:560px){
+      .calc-page{padding-top:22px}
+      .calc-workbench{margin-top:0;border-radius:18px}
+      .calc-form-panel{padding:24px 20px 20px}
+      .calc-form-panel h2{font-size:27px;line-height:1.08;margin:8px 0 10px}
+      .calc-form-panel>p{font-size:14px;line-height:1.5;margin-bottom:20px}
+      .calc-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 10px}
+      .calc-field:first-child{grid-column:1/-1}
+      .calc-field{gap:6px}
+      .calc-field label{font-size:11.5px;line-height:1.3}
+      .calc-input{padding:11px 9px;font-size:14px}
+      .input-affix{padding-left:10px;font-size:13px}
+      .input-affix.suffix{padding-right:10px;font-size:12px;line-height:1.05;text-align:right}
+      .calc-submit{margin-top:18px}
+      .calc-result{min-height:0;padding:25px 20px}
+      .result-primary{font-size:34px;margin-bottom:20px}
+      .result-note{margin:18px 0 14px}
+      .calc-grid{margin-top:28px}
+    }
+    @media(max-width:360px){
+      .calc-fields{grid-template-columns:1fr}
+      .calc-field:first-child{grid-column:auto}
+    }`;
   document.head.appendChild(layoutStyle);
   const configs = {
     sip:{title:"SIP Calculator",description:"Estimate the potential future value of regular monthly investments.",fields:[["monthly","Monthly investment",10000,"₹",""],["years","Investment period",15,"","years"],["rate","Expected return",12,"","% p.a."]],calculate:v=>{const n=v.years*12,r=v.rate/1200,invested=v.monthly*n,total=r?v.monthly*((Math.pow(1+r,n)-1)/r)*(1+r):invested;return["Estimated future value",total,[["Total invested",invested],["Estimated returns",total-invested]]]}},
