@@ -1,9 +1,9 @@
 (() => {
   if (!document.querySelector('link[href*="enhancements.css"]')) {
-    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=2";document.head.appendChild(stylesheet);
+    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=3";document.head.appendChild(stylesheet);
   }
   if (!document.querySelector('script[src*="enhancements.js"]')) {
-    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=2";enhancementScript.defer=true;document.head.appendChild(enhancementScript);
+    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=3";enhancementScript.async=false;document.head.appendChild(enhancementScript);
   }
   if (!document.querySelector('script[src$="site-config.js"]')) {
     const configScript=document.createElement("script");

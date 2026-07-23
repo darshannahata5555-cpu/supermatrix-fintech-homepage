@@ -30,6 +30,25 @@
     }
   }
 
+  function setupKnowledgeMenu(){
+    const navLinks=document.querySelector(".site-nav .nav-links")||document.querySelector(".home-nav .home-links")||document.querySelector("header nav");
+    if(!navLinks||navLinks.querySelector(".sm-knowledge-menu"))return;
+    const toolsLink=[...navLinks.querySelectorAll(":scope > a")].find(a=>a.textContent.trim()==="Tools");
+    if(toolsLink)toolsLink.classList.add("sm-tools-link");
+    const faqLink=[...navLinks.querySelectorAll(":scope > a")].find(a=>a.textContent.trim()==="FAQs");
+    if(!faqLink)return;
+    const menu=document.createElement("details");
+    menu.className="sm-knowledge-menu";
+    menu.innerHTML='<summary>Knowledge Centre</summary><div class="sm-nav-dropdown"><a href="index.html#knowledge">Blogs</a><a href="index.html#knowledge">Investor Education</a><a href="faq.html">FAQs</a></div>';
+    faqLink.replaceWith(menu);
+    menu.addEventListener("toggle",()=>{
+      if(!menu.open)return;
+      document.querySelectorAll(".sm-knowledge-menu[open]").forEach(other=>{if(other!==menu)other.open=false});
+    });
+    document.addEventListener("click",event=>{if(menu.open&&!menu.contains(event.target))menu.open=false});
+    menu.addEventListener("keydown",event=>{if(event.key==="Escape"){menu.open=false;menu.querySelector("summary")?.focus()}});
+  }
+
   function addJourney(){
     if(!isHome||document.querySelector(".sm-journey"))return;
     const target=document.getElementById("why");
@@ -136,7 +155,7 @@
   }
 
   function applyPageEnhancements(){
-    setupNavigation();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
+    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
   }
   applyPageEnhancements();addMobileCta();addStructuredData();
   if(isHome){
