@@ -1,4 +1,7 @@
 (() => {
+  const layoutStyle=document.createElement("style");
+  layoutStyle.textContent=".calc-workbench{margin-top:0}.calc-grid{margin-top:42px}@media(max-width:560px){.calc-grid{margin-top:28px}}";
+  document.head.appendChild(layoutStyle);
   const configs = {
     sip:{title:"SIP Calculator",description:"Estimate the potential future value of regular monthly investments.",fields:[["monthly","Monthly investment",10000,"₹",""],["years","Investment period",15,"","years"],["rate","Expected return",12,"","% p.a."]],calculate:v=>{const n=v.years*12,r=v.rate/1200,invested=v.monthly*n,total=r?v.monthly*((Math.pow(1+r,n)-1)/r)*(1+r):invested;return["Estimated future value",total,[["Total invested",invested],["Estimated returns",total-invested]]]}},
     lumpsum:{title:"Lumpsum Calculator",description:"Estimate how a one-time investment could grow over a selected period.",fields:[["amount","One-time investment",500000,"₹",""],["years","Investment period",10,"","years"],["rate","Expected return",12,"","% p.a."]],calculate:v=>{const total=v.amount*Math.pow(1+v.rate/100,v.years);return["Estimated future value",total,[["Amount invested",v.amount],["Estimated returns",total-v.amount]]]}},
