@@ -102,7 +102,7 @@
     button.addEventListener("click",()=>{
       const [name,email,phone]=[...inputs].map(i=>i.value.trim()),query=textarea.value.trim();
       if(!name||(!email&&!phone)||!query){status.textContent="Please enter your name, either email or phone, and your query.";return}
-      const subject=encodeURIComponent(`Website consultation request — ${name}`);
+      const subject=encodeURIComponent(`Website call request — ${name}`);
       const body=encodeURIComponent(`Name: ${name}\nEmail: ${email||"Not provided"}\nPhone: ${phone||"Not provided"}\n\nQuery:\n${query}`);
       status.textContent="Opening your email app. Please send the prepared message to complete your request.";
       location.href=`mailto:support@supermatrix.in?subject=${subject}&body=${body}`;
