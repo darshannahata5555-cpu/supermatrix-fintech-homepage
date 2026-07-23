@@ -75,9 +75,9 @@
     #top > div > div:first-child > div:nth-of-type(1) a { width: 100%; justify-content: center; padding: 14px 18px !important; }
     #top sc-if > div { gap: 18px !important; margin-top: 38px !important; }
     #top sc-if > div > div[style*="width: 1px"] { display: none !important; }
-    #top > div > div:nth-child(2) { width: calc(100% - 12px); }
-    #top > div > div:nth-child(2) > div:first-child { padding: 20px !important; }
-    #top > div > div:nth-child(2) > div[style*="right: -14px"] { right: -8px !important; top: -28px !important; }
+    #top > div > div:nth-child(2) { width: calc(100% - 12px); display: flex; flex-direction: column; }
+    #top > div > div:nth-child(2) > div:first-child { padding: 20px !important; order: 2; width: 100%; }
+    #top > div > div:nth-child(2) > div[style*="right: -14px"] { position: static !important; order: 1; align-self: flex-end; margin: 0 0 14px 0; }
     #top > div > div:nth-child(2) > div[style*="left: -18px"] { left: -8px !important; bottom: -26px !important; }
 
     #why { padding: 70px 18px !important; }
