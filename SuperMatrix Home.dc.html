@@ -104,10 +104,16 @@
     #why > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 34px !important; }
     #why > div:last-child > div { padding: 22px !important; }
 
-    #solutions > div:last-child { padding: 70px 18px !important; }
+    #solutions > div:last-child { padding: 52px 16px 56px !important; }
     #solutions > div:last-child > div:first-child { align-items: flex-start !important; }
-    #solutions > div:last-child > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: 34px !important; }
-    #solutions > div:last-child > div:last-child > a { min-height: 0; padding: 20px !important; }
+    #solutions > div:last-child > div:first-child { gap: 14px !important; }
+    #solutions > div:last-child > div:first-child h2 { font-size: 31px !important; line-height: 1.06 !important; }
+    #solutions > div:last-child > div:last-child { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; margin-top: 26px !important; }
+    #solutions > div:last-child > div:last-child > a { min-height: 142px; padding: 15px !important; border-radius: 13px !important; display: flex !important; flex-direction: column; align-items: flex-start; }
+    #solutions > div:last-child > div:last-child > a svg { width: 20px; height: 20px; }
+    #solutions > div:last-child > div:last-child > a h3 { font-size: 16px !important; line-height: 1.2 !important; margin: 12px 0 5px !important; }
+    #solutions > div:last-child > div:last-child > a p { font-size: 12.5px !important; line-height: 1.4 !important; }
+    #solutions > div:last-child > div:last-child > a > span[style*="position: absolute"] { top: 12px !important; right: 10px !important; font-size: 8.5px !important; padding: 3px 6px !important; }
 
     #tools { padding: 70px 18px !important; }
     #tools > div:nth-child(2) { margin-top: 34px !important; border-radius: 18px !important; }
@@ -132,6 +138,10 @@
     header > div > div:last-child { display: none !important; }
     header > div > a { max-width: 100%; }
     #top > div { padding-top: 44px !important; }
+  }
+
+  @media (max-width: 350px) {
+    #solutions > div:last-child > div:last-child { grid-template-columns: 1fr !important; }
   }
 </style>
 </helmet>
