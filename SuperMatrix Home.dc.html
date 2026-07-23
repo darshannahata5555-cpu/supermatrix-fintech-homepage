@@ -34,6 +34,86 @@
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
   .rev { opacity: 0; animation: fadeUp .8s cubic-bezier(.16,.84,.44,1) both; }
+
+  /* Responsive layout — desktop styles above remain unchanged */
+  @media (max-width: 900px) {
+    header > div { padding: 12px 20px !important; gap: 16px !important; }
+    header nav { display: none !important; }
+    header > div > div:last-child { margin-left: auto; }
+    #top > div { grid-template-columns: 1fr !important; gap: 58px !important; padding: 64px 24px 84px !important; }
+    #top > div > div:first-child { max-width: 680px; }
+    #top > div > div:nth-child(2) { width: min(100%, 560px); margin: 0 auto; }
+    #why > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+    #solutions > div:last-child > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+    #tools > div:nth-child(2) { grid-template-columns: 1fr !important; }
+    #tools > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+    #knowledge > div > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+    #contact { grid-template-columns: 1fr !important; }
+    footer > div > div:first-child { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+
+  @media (max-width: 600px) {
+    html, body, x-dc, x-dc > div { width: 100%; max-width: 100%; min-width: 0; overflow-x: hidden; }
+    section, section > div, header, header > div, footer, footer > div { max-width: 100%; min-width: 0; }
+    h1, h2, h3, p, a { overflow-wrap: break-word; }
+    .rev { opacity: 1 !important; animation: none !important; }
+    body > x-dc > div > div:first-of-type > div { padding: 7px 16px !important; justify-content: center !important; }
+    body > x-dc > div > div:first-of-type > div > span:last-child { display: none !important; }
+    header > div { padding: 10px 16px !important; }
+    header > div > a { gap: 8px !important; }
+    header > div > a img { width: 36px !important; height: 36px !important; }
+    header > div > a > span:last-child > span:first-child { font-size: 18px !important; }
+    header > div > a > span:last-child > span:last-child { display: none !important; }
+    header > div > div:last-child { gap: 8px !important; }
+    header > div > div:last-child > a:first-child { display: none !important; }
+    header > div > div:last-child > a:last-child { padding: 9px 12px !important; font-size: 13px !important; white-space: nowrap; }
+
+    #top > div { padding: 52px 18px 72px !important; gap: 48px !important; }
+    #top h1 { max-width: 100%; font-size: clamp(38px, 11vw, 48px) !important; line-height: 1.04 !important; text-wrap: wrap !important; }
+    #top p { font-size: 16.5px !important; }
+    #top > div > div:first-child > div:nth-of-type(1) { gap: 10px !important; margin-top: 28px !important; }
+    #top > div > div:first-child > div:nth-of-type(1) a { width: 100%; justify-content: center; padding: 14px 18px !important; }
+    #top sc-if > div { gap: 18px !important; margin-top: 38px !important; }
+    #top sc-if > div > div[style*="width: 1px"] { display: none !important; }
+    #top > div > div:nth-child(2) { width: calc(100% - 12px); }
+    #top > div > div:nth-child(2) > div:first-child { padding: 20px !important; }
+    #top > div > div:nth-child(2) > div[style*="right: -14px"] { right: -8px !important; top: -28px !important; }
+    #top > div > div:nth-child(2) > div[style*="left: -18px"] { left: -8px !important; bottom: -26px !important; }
+
+    #why { padding: 70px 18px !important; }
+    #why h2, #solutions h2, #tools h2, #knowledge h2, #contact h2 { font-size: 34px !important; }
+    #why > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 34px !important; }
+    #why > div:last-child > div { padding: 22px !important; }
+
+    #solutions > div:last-child { padding: 70px 18px !important; }
+    #solutions > div:last-child > div:first-child { align-items: flex-start !important; }
+    #solutions > div:last-child > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: 34px !important; }
+    #solutions > div:last-child > div:last-child > a { min-height: 0; padding: 20px !important; }
+
+    #tools { padding: 70px 18px !important; }
+    #tools > div:nth-child(2) { margin-top: 34px !important; border-radius: 18px !important; }
+    #tools > div:nth-child(2) > div { padding: 26px 20px !important; }
+    #tools > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; }
+    #tools > div:last-child > a { padding: 18px !important; }
+
+    #knowledge > div { padding: 70px 18px !important; }
+    #knowledge > div > div:first-child { align-items: flex-start !important; }
+    #knowledge > div > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: 34px !important; }
+    #knowledge > div > div:last-child > a { padding: 22px !important; }
+
+    #contact { padding: 70px 18px !important; gap: 38px !important; }
+    #contact > div:last-child { padding: 26px 20px !important; border-radius: 18px !important; }
+
+    footer > div { padding: 58px 18px 30px !important; }
+    footer > div > div:first-child { grid-template-columns: 1fr !important; gap: 34px !important; }
+    footer > div > div:last-child { align-items: flex-start !important; flex-direction: column; }
+  }
+
+  @media (max-width: 430px) {
+    header > div > div:last-child { display: none !important; }
+    header > div > a { max-width: 100%; }
+    #top > div { padding-top: 44px !important; }
+  }
 </style>
 </helmet>
 
