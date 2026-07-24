@@ -242,3 +242,31 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
   .container{padding-top:64px;padding-bottom:64px}
 }
 @media(min-width:701px) and (max-width:1050px){.solutions .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Investment solution cards: high-contrast white surface on the blue section. */
+#solutions a[href*="product.html"],
+.solutions .card{
+  background:#fff!important;
+  color:#10204a!important;
+  border-color:#c9dbef!important;
+  box-shadow:0 14px 30px -26px rgba(4,48,110,.72)!important;
+}
+#solutions a[href*="product.html"] h3,
+.solutions .card h3{color:#10204a!important}
+#solutions a[href*="product.html"] p,
+.solutions .card p{color:#667493!important}
+#solutions a[href*="product.html"]::after,
+.solutions .more{color:#075fc7!important}
+#solutions a[href*="product.html"] svg,
+.solutions .icon{
+  color:#0868d5!important;
+  stroke:#0868d5!important;
+  background:#edf5ff!important;
+  border-color:#c9dbef!important;
+}
+#solutions a[href*="product.html"]:hover,
+.solutions .card:hover{
+  background:#f7fbff!important;
+  border-color:#73a9e8!important;
+  box-shadow:0 22px 42px -28px rgba(3,67,154,.72)!important;
+}
