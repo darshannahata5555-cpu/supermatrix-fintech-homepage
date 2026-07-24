@@ -219,8 +219,8 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 @media(max-width:700px){
   #top>div,#why,#tools,#knowledge>div,#contact{padding-top:70px!important;padding-bottom:70px!important}
   #solutions>div:last-child{padding-top:70px!important;padding-bottom:70px!important}
-  #solutions>div:last-child>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;border-radius:18px!important;margin-top:32px!important}
-  #solutions>div:last-child>div:last-child>a{min-height:190px;padding:18px!important}
+  #solutions>div:last-child>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;border-radius:18px!important;margin-top:32px!important;background:#fff!important}
+  #solutions>div:last-child>div:last-child>a{min-height:190px;padding:18px!important;border:1px solid var(--sm-line)!important;border-radius:14px!important}
   #solutions>div:last-child>div:last-child>a>svg,#solutions>div:last-child>div:last-child>a[href*="pms"]::before{width:38px!important;height:38px!important;padding:8px}
   #solutions>div:last-child>div:last-child>a h3{margin-top:18px!important}
   #solutions>div:last-child>div:last-child>a::after{padding-top:16px;font-size:12px}
