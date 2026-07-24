@@ -6,7 +6,7 @@
   <meta name="description" content="Learn how SuperMatrix investment solutions work, their key benefits, and who they are for.">
   <link rel="icon" href="./assets/supermatrix-logo.svg"><link rel="stylesheet" href="./site.css"><link rel="stylesheet" href="./chatbot.css"><script src="./chatbot.js?v=10" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>.product-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:42px}.detail-section{margin-bottom:38px}.detail-section h2{font-size:28px}.benefits{padding-left:20px;color:var(--muted);line-height:1.75}.product-aside{position:sticky;top:95px;height:max-content;background:var(--navy);color:#fff;border-radius:18px;padding:27px}.product-aside h3{font:700 25px "Bricolage Grotesque";margin:0}.product-aside p{color:#c2cae0;line-height:1.6}.product-aside .button{width:100%;margin-top:8px}.rated-fund-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.rated-fund-card{min-height:190px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;display:flex;flex-direction:column;box-shadow:0 16px 34px -30px rgba(44,50,99,.45)}.rated-fund-card__top{display:flex;align-items:center;justify-content:space-between;gap:12px}.rated-fund-card__icon{width:44px;height:44px;border-radius:12px;background:#eaf2fc;color:var(--blue);display:grid;place-items:center;font-weight:800}.rated-fund-card__badge{padding:5px 9px;border-radius:99px;background:#f2f5fa;color:#727c96;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.rated-fund-card h3{font:700 18px/1.3 "Bricolage Grotesque";margin:20px 0 7px}.rated-fund-card p{color:var(--muted);font-size:13px;line-height:1.5;margin:0}.rated-fund-card__rating{margin-top:auto;padding-top:17px;color:var(--blue);font-size:13px;font-weight:700}@media(max-width:820px){.product-layout{grid-template-columns:1fr}.product-aside{position:static}}@media(max-width:560px){.rated-fund-grid{grid-template-columns:1fr;gap:12px}.rated-fund-card{min-height:170px;padding:19px}}</style>
+  <style>.product-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:42px}.detail-section{margin-bottom:38px}.detail-section h2{font-size:28px}.detail-section .prose strong,.benefits strong{color:inherit;font-weight:600}.benefits{padding-left:20px;color:var(--muted);line-height:1.75}.product-aside{position:sticky;top:95px;height:max-content;background:var(--navy);color:#fff;border-radius:18px;padding:27px}.product-aside h3{font:700 25px "Bricolage Grotesque";margin:0}.product-aside p{color:#c2cae0;line-height:1.6}.product-aside .button{width:100%;margin-top:8px}.rated-fund-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.rated-fund-card{min-height:190px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;display:flex;flex-direction:column;box-shadow:0 16px 34px -30px rgba(44,50,99,.45)}.rated-fund-card__top{display:flex;align-items:center;justify-content:space-between;gap:12px}.rated-fund-card__icon{width:44px;height:44px;border-radius:12px;background:#eaf2fc;color:var(--blue);display:grid;place-items:center;font-weight:800}.rated-fund-card__badge{padding:5px 9px;border-radius:99px;background:#f2f5fa;color:#727c96;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.rated-fund-card h3{font:700 18px/1.3 "Bricolage Grotesque";margin:20px 0 7px}.rated-fund-card p{color:var(--muted);font-size:13px;line-height:1.5;margin:0}.rated-fund-card__rating{margin-top:auto;padding-top:17px;color:var(--blue);font-size:13px;font-weight:700}@media(max-width:820px){.product-layout{grid-template-columns:1fr}.product-aside{position:static}}@media(max-width:560px){.rated-fund-grid{grid-template-columns:1fr;gap:12px}.rated-fund-card{min-height:170px;padding:19px}}</style>
 </head>
 <body>
 <header class="site-header"><nav class="site-nav"><a class="brand" href="index.html"><img src="./assets/supermatrix-logo.svg" alt="SuperMatrix logo"><span>SUPERMATRIX</span></a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a class="active" href="products.html">Products / Services</a><a href="calculators.html">Tools</a><a href="faq.html">FAQs</a><a href="index.html#contact">Contact</a></div><a class="nav-cta" href="products.html">All Solutions</a></nav></header>
@@ -85,12 +85,42 @@ elss:{
  cta:"Start your Goal Based Plan with SuperMatrix's Dream Home, Child Education, and Retirement calculators."
 }};
 const key=new URLSearchParams(location.search).get("product")||"mutual-funds",p=products[key]||products["mutual-funds"];
+const emphasis={
+ "mutual-funds":["professional fund manager","stocks (equity), bonds (debt), or a mix of both (hybrid)","NAV, or Net Asset Value","single pool","qualified fund manager","market-linked growth"],
+ sip:["fixed amount","regular intervals","auto-debited","rupee-cost averaging","market volatility","build wealth steadily"],
+ swp:["fixed amount","regular intervals","regular monthly income","remaining corpus","continues to have the potential to grow"],
+ fof:["units of other mutual funds","domestic or international","global diversification","single investment","broader diversification"],
+ elss:["tax deduction under Section 80C","₹1.5 lakh per financial year","mandatory lock-in of 3 years","equity and equity-related instruments","market-linked growth potential"],
+ "pms-equity":["customised portfolio of equity stocks","directly in your own name","minimum investment of ₹50 lakh","Discretionary PMS","Non-Discretionary PMS","direct stock ownership"],
+ "pms-debt":["fixed-income instruments","directly in your own name","minimum investment of ₹50 lakh","Discretionary","Non-Discretionary","income-focused"],
+ "goal-planning":["specific, time-bound financial goals","define each goal clearly","mix of investment products and a savings plan","tracked separately","specific life goal"]
+};
+function emphasizeText(root,phrases){
+ const escaped=phrases.map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).sort((a,b)=>b.length-a.length);
+ if(!escaped.length)return;
+ const pattern=new RegExp(`(${escaped.join("|")})`,"gi");
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+ const nodes=[];
+ while(walker.nextNode())if(!walker.currentNode.parentElement.closest("strong"))nodes.push(walker.currentNode);
+ nodes.forEach(node=>{
+  if(!pattern.test(node.nodeValue)){pattern.lastIndex=0;return}
+  pattern.lastIndex=0;
+  const fragment=document.createDocumentFragment();
+  node.nodeValue.split(pattern).filter(Boolean).forEach(part=>{
+   if(phrases.some(term=>term.toLowerCase()===part.toLowerCase())){
+    const strong=document.createElement("strong");strong.textContent=part;fragment.appendChild(strong);
+   }else fragment.appendChild(document.createTextNode(part));
+  });
+  node.replaceWith(fragment);
+ });
+}
 document.title=p.title+" | SuperMatrix";
 document.getElementById("title").textContent=p.title;
 document.getElementById("what").textContent=p.what;
 document.getElementById("how").innerHTML=p.how;
-document.getElementById("benefits").innerHTML=p.benefits.map(x=>`<li>${x}</li>`).join("");
+document.getElementById("benefits").innerHTML=p.benefits.map(x=>{const parts=x.split(" — ");return parts.length>1?`<li><strong>${parts.shift()}</strong> — ${parts.join(" — ")}</li>`:`<li>${x}</li>`}).join("");
 document.getElementById("suitable").textContent=p.suitable;
+["what","how","suitable"].forEach(id=>emphasizeText(document.getElementById(id),emphasis[key]||emphasis["mutual-funds"]));
 document.getElementById("ctaText").textContent=p.cta;
 document.getElementById("extra").innerHTML=p.extra||"";
 </script>
