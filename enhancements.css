@@ -43,9 +43,6 @@
   radial-gradient(34% 42% at 8% 12%,rgba(69,156,255,.13),transparent 74%),
   radial-gradient(circle at 1px 1px,rgba(14,79,161,.08) 1px,transparent 0) 0 0/26px 26px,
   linear-gradient(135deg,#f8fbff 0%,#edf5ff 52%,#f5f7fc 100%)!important}
-#top::before,#top::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(2px)}
-#top::before{width:360px;height:360px;right:-120px;top:-110px;background:rgba(55,136,236,.12);animation:smAmbient 9s ease-in-out infinite}
-#top::after{width:180px;height:180px;left:42%;bottom:-100px;background:rgba(30,116,218,.08);animation:smAmbient 11s ease-in-out infinite reverse}
 #top h1 span{background:linear-gradient(90deg,#0757b6,#2f8bf0,#0757b6);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:smTextFlow 5s linear infinite}
 #top .primary-cta{position:relative;overflow:hidden;background:linear-gradient(110deg,#0757b6,#1675dc 42%,#45a0ff 52%,#1675dc 62%,#0757b6)!important;background-size:230% 100%!important;animation:smButtonFlow 5s ease-in-out infinite;box-shadow:0 16px 34px -12px rgba(4,83,183,.7)!important}
 #top .primary-cta::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 28%,rgba(255,255,255,.32) 48%,transparent 68%);transform:translateX(-130%);animation:smShine 4.8s ease-in-out infinite}
@@ -68,7 +65,6 @@
 @keyframes smButtonFlow{0%,100%{background-position:0 0}50%{background-position:100% 0}}
 @keyframes smShine{0%,55%{transform:translateX(-130%)}80%,100%{transform:translateX(130%)}}
 @keyframes smDashboard{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes smAmbient{0%,100%{transform:translate(0,0) scale(.96)}50%{transform:translate(-18px,16px) scale(1.08)}}
 @supports(animation-timeline:view()){
   #why>div:last-child>div,#solutions a[href*="product.html"],#tools>div:last-child>a,#knowledge>div>div:last-child>a{animation:smViewReveal linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
   @keyframes smViewReveal{from{opacity:.25;translate:0 24px;scale:.98}to{opacity:1;translate:0;scale:1}}
@@ -112,8 +108,6 @@
   .sm-care-inner{grid-template-columns:1fr}
 }
 @media(max-width:700px){
-  #top::before{width:230px;height:230px;right:-110px;top:120px}
-  #top::after{display:none}
   .sm-journey,.sm-care{padding:62px 20px}
   .sm-care-grid{grid-template-columns:1fr}
   .sm-mobile-cta{position:fixed;display:flex;left:12px;right:12px;bottom:10px;z-index:45;padding:6px;background:rgba(255,255,255,.96);border:1px solid #d7e2ef;border-radius:14px;box-shadow:0 14px 34px rgba(32,39,81,.2);backdrop-filter:blur(12px)}
@@ -123,6 +117,6 @@
   .sm-chatbot{right:14px;bottom:82px}
 }
 @media(prefers-reduced-motion:reduce){
-  #top::before,#top::after,#top h1 span,#top .primary-cta,#top .primary-cta::after,#top>div>div:nth-child(2)>div:first-child{animation:none!important}
+  #top h1 span,#top .primary-cta,#top .primary-cta::after,#top>div>div:nth-child(2)>div:first-child{animation:none!important}
   #why>div:last-child>div,#solutions a[href*="product.html"],#tools>div:last-child>a,#knowledge>div>div:last-child>a{animation:none!important}
 }
