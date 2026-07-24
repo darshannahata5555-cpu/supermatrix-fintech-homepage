@@ -154,27 +154,8 @@
     document.head.appendChild(script);
   }
 
-  function addSolutionIllustrations(){
-    if(!isHome)return;
-    const art={
-      "mutual-funds":'<svg viewBox="0 0 160 90"><rect x="14" y="54" width="20" height="22" rx="4"/><rect x="42" y="40" width="20" height="36" rx="4"/><rect x="70" y="24" width="20" height="52" rx="4"/><path class="sm-art-line" d="M12 47c25-2 30-19 52-18 17 1 25-14 45-18"/><circle cx="110" cy="11" r="5"/></svg>',
-      sip:'<svg viewBox="0 0 160 90"><rect x="17" y="16" width="76" height="59" rx="10"/><path d="M17 34h76M36 10v14M74 10v14"/><circle cx="36" cy="50" r="4"/><circle cx="55" cy="50" r="4"/><circle cx="74" cy="50" r="4"/><path class="sm-art-line" d="M106 69l12-14 10 6 18-27"/><path d="M137 34h9v9"/></svg>',
-      swp:'<svg viewBox="0 0 160 90"><path d="M18 18h92M18 38h72M18 58h50M18 78h28"/><path class="sm-art-line" d="M121 15v55m-13-13 13 13 13-13"/><circle cx="121" cy="76" r="7"/></svg>',
-      fof:'<svg viewBox="0 0 160 90"><rect x="18" y="17" width="48" height="48" rx="10"/><rect x="76" y="17" width="48" height="48" rx="10"/><rect x="47" y="38" width="48" height="40" rx="10"/><path d="M32 31h20v20H32zm58 0h20v20H90M61 52h20v14H61"/></svg>',
-      elss:'<svg viewBox="0 0 160 90"><circle cx="69" cy="45" r="34"/><path class="sm-art-line" d="M46 67 92 22"/><circle cx="51" cy="30" r="8"/><circle cx="88" cy="61" r="8"/><path d="M112 31h31M112 45h24M112 59h17"/></svg>',
-      "pms-equity":'<svg viewBox="0 0 160 90"><path d="M14 75h134M22 67V25M22 67h126"/><path class="sm-art-line" d="m27 60 25-18 20 8 29-27 18 8 24-20"/><path d="M132 11h11v11"/></svg>',
-      "pms-debt":'<svg viewBox="0 0 160 90"><rect x="17" y="20" width="94" height="54" rx="10"/><path d="M17 37h94M34 51h43M34 61h61"/><circle cx="94" cy="29" r="12"/><path class="sm-art-line" d="m89 29 4 4 7-9"/><path d="M124 26h22M124 43h17M124 60h12"/></svg>',
-      "goal-planning":'<svg viewBox="0 0 160 90"><path class="sm-art-line" d="M15 70c24-2 21-27 44-27 21 0 17 18 38 18 20 0 23-28 46-35"/><circle cx="15" cy="70" r="6"/><circle cx="59" cy="43" r="6"/><circle cx="97" cy="61" r="6"/><path d="M143 12v29m0-27h-20l5 7-5 7h20"/></svg>'
-    };
-    document.querySelectorAll('#solutions a[href*="product.html"]').forEach(card=>{
-      if(card.querySelector(".sm-card-art"))return;
-      const key=new URL(card.href,location.href).searchParams.get("product"),svg=art[key];
-      if(svg)card.insertAdjacentHTML("beforeend",`<span class="sm-card-art" aria-hidden="true">${svg}</span>`);
-    });
-  }
-
   function applyPageEnhancements(){
-    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();addSolutionIllustrations();
+    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
   }
   applyPageEnhancements();addMobileCta();addStructuredData();
   if(isHome){
