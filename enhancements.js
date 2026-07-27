@@ -121,6 +121,26 @@
     });
   }
 
+  function standardizeFooter(){
+    const footer=document.querySelector("footer");
+    if(!footer||footer.dataset.smStandardized)return;
+    footer.dataset.smStandardized="true";
+    footer.className="site-footer sm-site-footer";
+    footer.innerHTML=`<div class="footer-inner">
+      <div class="sm-footer-overview">
+        <div class="sm-footer-identity"><a class="footer-brand" href="index.html"><img src="./assets/supermatrix-logo.svg" alt="SuperMatrix logo">SuperMatrix</a><p>An initiative by Sarthi Group.<br>AMFI Registered Mutual Fund Distributor<br><strong>ARN-72348</strong> · Valid 23 Feb 2026–22 Feb 2029</p></div>
+        <address class="sm-footer-office"><strong>Mumbai Office</strong><span>401, 4th Floor, Manek Plaza, 167 Vidya Nagari Marg, Kalina, Santacruz (East), Mumbai – 400098</span><span><a href="tel:02226528671">022-26528671 / 72</a> · <a href="mailto:support@supermatrix.in">support@supermatrix.in</a></span><a class="sm-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Manek+Plaza+Kalina+Santacruz+East+Mumbai" target="_blank" rel="noopener">View office on Google Maps ↗</a></address>
+      </div>
+      <div class="footer-grid sm-footer-grid">
+        <div><div class="footer-title">SuperMatrix</div><div class="footer-links"><a href="about.html">About Us</a><a href="index.html#contact">Contact Us</a><a href="faq.html">FAQs</a></div></div>
+        <div><div class="footer-title">Investments</div><div class="footer-links"><a href="product.html?product=mutual-funds">Mutual Funds</a><a href="product.html?product=sip">SIP</a><a href="product.html?product=elss">ELSS</a><a href="product.html?product=goal-planning">Goal-Based Investing</a></div></div>
+        <div><div class="footer-title">Tools</div><div class="footer-links"><a href="calculators.html?calculator=sip">SIP Calculator</a><a href="calculators.html?calculator=lumpsum">Lumpsum Calculator</a><a href="calculators.html?calculator=retirement">Retirement Planner</a><a href="calculators.html?calculator=goal">Goal Planner</a></div></div>
+        <div><div class="footer-title">Investor Support</div><div class="footer-links"><a href="kyc.html">KYC</a><a href="support.html">Download Documents</a><a href="grievance.html">Grievance Redressal</a><a href="investor-charter.html">Investor Charter</a></div></div>
+      </div>
+      <div class="disclosure"><strong>Mutual Fund investments are subject to market risks.</strong> Please read all scheme-related documents carefully before investing. Past performance does not guarantee future returns. SuperMatrix distributes Regular Plan schemes and receives commission from Asset Management Companies (AMCs); Direct Plans are available directly through the respective AMCs and are not facilitated by us.</div>
+    </div>`;
+  }
+
   function addProductGuide(){
     if(path!=="products.html"||document.querySelector(".sm-product-guide"))return;
     const grid=document.querySelector(".solutions .grid");
@@ -157,7 +177,7 @@
   }
 
   function applyPageEnhancements(){
-    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
+    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();standardizeFooter();addCalculatorGuidance();
   }
   applyPageEnhancements();addMobileCta();addStructuredData();
   if(isHome){

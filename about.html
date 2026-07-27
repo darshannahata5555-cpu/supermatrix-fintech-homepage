@@ -16,10 +16,17 @@
     .prose{max-width:900px}
     .prose p{overflow-wrap:anywhere}
     .prose strong,.leader-copy strong,.group-card strong{color:inherit;font-weight:700}
+    .about-hero>div{padding-top:64px;padding-bottom:64px}
+    .about-hero-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(420px,1.18fr);gap:44px;align-items:center}
+    .about-hero-copy{position:relative;z-index:1}
+    .about-hero-visual{margin:0;border:1px solid rgba(255,255,255,.16);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -38px rgba(2,17,55,.72)}
+    .about-hero-visual img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center}
+    .section-head .eyebrow{font-size:14px;color:var(--blue)}
+    main .section-head h2{color:var(--blue)!important}
     .leadership-layout{display:grid;gap:20px}
-    .leader-card{display:grid;grid-template-columns:280px minmax(0,1fr);gap:34px;padding:0;overflow:hidden}
+    .leader-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:34px;padding:0;overflow:hidden}
     .leader-portrait{margin:0;min-height:100%;background:linear-gradient(145deg,#eaf2fc,#f8fbff)}
-    .leader-portrait img{display:block;width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center}
+    .leader-portrait img{display:block;width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center top}
     .leader-copy{padding:34px 34px 34px 0}
     .leader-copy h3{font-size:30px;margin-bottom:6px}
     .leader-role{display:block;color:var(--blue);font-weight:700;line-height:1.45;margin-bottom:2px}
@@ -27,6 +34,9 @@
     .leader-copy p{margin:0 0 16px}
     .group-card{padding:30px 34px}
     @media(max-width:560px){
+      .about-hero>div{padding-top:46px;padding-bottom:52px}
+      .about-hero-layout{grid-template-columns:1fr;gap:26px}
+      .about-hero-visual{width:100%;border-radius:18px}
       .page-hero h1{font-size:38px}
       .page-hero .actions{display:grid;grid-template-columns:1fr}
       .page-hero .button{width:100%;padding-inline:14px}
@@ -38,12 +48,13 @@
       .leader-copy h3{font-size:26px}
       .group-card{padding:24px 22px}
     }
+    @media(min-width:561px) and (max-width:850px){.about-hero-layout{grid-template-columns:1fr;gap:30px}.about-hero-visual{max-width:680px}.leader-card{grid-template-columns:190px minmax(0,1fr)}}
   </style>
 </head>
 <body>
 <header class="site-header"><nav class="site-nav"><a class="brand" href="index.html"><img src="./assets/supermatrix-logo.svg" alt="SuperMatrix logo"><span>SUPERMATRIX</span></a><div class="nav-links"><a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="products.html">Products / Services</a><a href="calculators.html">Tools</a><a href="faq.html">FAQs</a><a href="index.html#contact">Contact</a></div><a class="nav-cta" href="index.html#contact">Start Investing</a></nav></header>
 <main>
-  <section class="page-hero"><div><span class="eyebrow">About SuperMatrix</span><h1>Empowering Your Financial Journey</h1><p>Technology-led convenience, professional support, and a goal-based approach to make investing simpler, more transparent, and more accessible.</p><div class="actions"><a class="button" href="index.html#contact">Start Investing</a><a class="button secondary" href="index.html#contact">Book a Free Call</a></div></div></section>
+  <section class="page-hero about-hero"><div class="about-hero-layout"><div class="about-hero-copy"><span class="eyebrow">About SuperMatrix</span><h1>Empowering Your Financial Journey</h1><p>Technology-led convenience, professional support, and a goal-based approach to make investing simpler, more transparent, and more accessible.</p><div class="actions"><a class="button" href="index.html#contact">Start Investing</a><a class="button secondary" href="index.html#contact">Book a Free Call</a></div></div><figure class="about-hero-visual"><img src="./assets/about-supermatrix-illustration.png" alt="Professionals using technology to plan long-term financial goals" width="1672" height="941"></figure></div></section>
 
   <section class="container"><div class="section-head"><span class="eyebrow">Who we are</span><h2>Investing built around your goals</h2></div><div class="prose"><p><strong>SuperMatrix is the wealth management platform of Sarthi Financial Services Private Limited</strong> (CIN: U67190DL2009PTC187401), an <strong>AMFI-Registered Mutual Fund Distributor</strong>. By combining technology with professional service, SuperMatrix simplifies your investing experience by offering a seamless, transparent, and goal-based investment platform with access to a diverse range of financial solutions.</p><p>At SuperMatrix, we believe your investment journey should begin with a <strong>clear financial goal</strong>. Our platform is built around a <strong>goal-based investing approach</strong>, enabling you to plan for milestones such as buying a home, funding education, planning retirement, creating wealth, or building a financial legacy.</p><p>We leverage technology to simplify your entire investment process—from <strong>onboarding and paperless transactions</strong> to <strong>portfolio tracking and investment monitoring</strong>—making investing convenient and accessible for you. At the same time, our experienced professionals assist you throughout your investment journey by helping you understand investment options and complete your transactions smoothly.</p><p>SuperMatrix offers you access to a <strong>wide range of mutual fund schemes from leading Asset Management Companies (AMCs)</strong>, allowing you to choose solutions that align with your <strong>financial goals, investment horizon, and risk appetite</strong>.</p><p>Backed by the values of <strong>trust, transparency, professionalism, and innovation</strong>, SuperMatrix is committed to making investing easier, more organized, and more accessible, while helping you stay focused on your long-term financial aspirations.</p></div></section>
 
