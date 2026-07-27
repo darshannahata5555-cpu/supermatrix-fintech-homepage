@@ -42,7 +42,7 @@
     if(!faqLink)return;
     const menu=document.createElement("details");
     menu.className="sm-knowledge-menu";
-    menu.innerHTML='<summary>Knowledge Centre</summary><div class="sm-nav-dropdown"><a href="knowledge.html">Articles</a><a href="knowledge.html">Investor Education</a><a href="faq.html">FAQs</a></div>';
+    menu.innerHTML='<summary>Knowledge Centre</summary><div class="sm-nav-dropdown"><a href="knowledge.html">Investor Education</a></div>';
     faqLink.replaceWith(menu);
     menu.addEventListener("toggle",()=>{
       if(!menu.open)return;
