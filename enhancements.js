@@ -101,9 +101,11 @@
     const status=document.createElement("p");status.className="sm-form-status";status.setAttribute("role","status");wrap.insertBefore(status,button.nextSibling);
     button.addEventListener("click",()=>{
       const [name,email,phone]=[...inputs].map(i=>i.value.trim()),query=textarea.value.trim();
-      if(!name||(!email&&!phone)||!query){status.textContent="Please enter your name, either email or phone, and your query.";return}
+      if(!name||!email||!phone||!query){status.textContent="Please enter your name, email, phone number, and query. Email and phone number are both required.";return}
+      if(!inputs[1].checkValidity()){status.textContent="Please enter a valid email address.";inputs[1].focus();return}
+      if(!inputs[2].checkValidity()){status.textContent="Please enter a valid phone number.";inputs[2].focus();return}
       const subject=encodeURIComponent(`Website call request — ${name}`);
-      const body=encodeURIComponent(`Name: ${name}\nEmail: ${email||"Not provided"}\nPhone: ${phone||"Not provided"}\n\nQuery:\n${query}`);
+      const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nQuery:\n${query}`);
       status.textContent="Opening your email app. Please send the prepared message to complete your request.";
       location.href=`mailto:support@supermatrix.in?subject=${subject}&body=${body}`;
     });

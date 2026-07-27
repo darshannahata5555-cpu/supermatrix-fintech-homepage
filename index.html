@@ -56,11 +56,9 @@
   #why > div:last-child > div:hover, #knowledge > div > div:last-child > a:hover, #tools > div:last-child > a:hover { transform:translateY(-5px); border-color:#B7CBE7 !important; box-shadow:0 22px 38px -28px rgba(44,50,99,.5); }
   #solutions a[href*="product.html"] {
     color:#10204A !important;
-    background:linear-gradient(145deg,rgba(255,255,255,.82) 0%,rgba(239,247,255,.72) 100%) !important;
+    background:linear-gradient(145deg,#FFFFFF 0%,#F7FBFF 100%) !important;
     border-color:rgba(210,229,249,.78) !important;
     box-shadow:0 18px 38px -24px rgba(3,35,86,.62),inset 0 1px 0 rgba(255,255,255,.85);
-    -webkit-backdrop-filter:blur(12px) saturate(125%);
-    backdrop-filter:blur(12px) saturate(125%);
     transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease;
   }
   #solutions a[href*="product.html"] h3 { color:#10204A !important; }
@@ -76,7 +74,7 @@
     color:#10204A !important;
     transform:translateY(-5px);
     border-color:rgba(133,180,233,.92) !important;
-    background:linear-gradient(145deg,rgba(255,255,255,.90) 0%,rgba(239,247,255,.82) 100%) !important;
+    background:linear-gradient(145deg,#FFFFFF 0%,#EEF6FF 100%) !important;
     box-shadow:0 24px 46px -26px rgba(3,55,126,.68),inset 0 1px 0 rgba(255,255,255,.95);
   }
 
@@ -599,8 +597,8 @@
       <div style="display: flex; flex-direction: column; gap: 14px;">
         <input type="text" placeholder="Full name" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-          <input type="email" placeholder="Email" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none;">
-          <input type="tel" placeholder="Phone number" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none;">
+          <input type="email" name="email" placeholder="Email *" autocomplete="email" required aria-required="true" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none;">
+          <input type="tel" name="phone" placeholder="Phone number *" autocomplete="tel" inputmode="tel" minlength="7" required aria-required="true" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none;">
         </div>
         <textarea placeholder="Your query" rows="4" style="width: 100%; padding: 14px 16px; border-radius: 11px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-family: 'Instrument Sans'; font-size: 15px; outline: none; resize: vertical;"></textarea>
         <button style="width: 100%; padding: 15px; border: none; border-radius: 11px; background: #0E4FA1; color: #fff; font-family: 'Instrument Sans'; font-size: 16px; font-weight: 600; cursor: pointer;">Book a call</button>
