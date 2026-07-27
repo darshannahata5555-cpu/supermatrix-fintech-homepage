@@ -1,9 +1,9 @@
 (() => {
   if (!document.querySelector('link[href*="enhancements.css"]')) {
-    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=16";document.head.appendChild(stylesheet);
+    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=17";document.head.appendChild(stylesheet);
   }
   if (!document.querySelector('script[src*="enhancements.js"]')) {
-    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=4";enhancementScript.async=false;document.head.appendChild(enhancementScript);
+    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=5";enhancementScript.async=false;document.head.appendChild(enhancementScript);
   }
   if (!document.querySelector('script[src$="site-config.js"]')) {
     const configScript=document.createElement("script");
@@ -13,6 +13,8 @@
   const CONTACT_PHONE_DISPLAY = "022-26528671 / 72";
   const CONTACT_PHONE_LINK = "02226528671";
   const CONTACT_EMAIL = "support@supermatrix.in";
+  const WHATSAPP_NUMBER = "918097147744";
+  const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello SuperMatrix, I would like assistance.")}`;
   const DISCLAIMER = "General information only. Mutual Fund investments are subject to market risks.";
   const NO_SEPARATE_FEE = "SuperMatrix does not charge investors a separate fee for mutual fund distribution. For Regular Plan schemes, SuperMatrix receives commission from Asset Management Companies (AMCs). Scheme-level costs such as the Total Expense Ratio and any applicable exit load may still apply.";
 
@@ -128,7 +130,7 @@
 
     function addContact(bubble) {
       const actions=document.createElement("span"); actions.className="sm-chat-actions";
-      actions.innerHTML=`<a href="tel:${CONTACT_PHONE_LINK}">Call support</a><a href="mailto:${CONTACT_EMAIL}">Email us</a>`;
+      actions.innerHTML=`<a href="${WHATSAPP_LINK}" target="_blank" rel="noopener">Chat on WhatsApp</a>`;
       bubble.appendChild(actions);
     }
     function addLink(bubble, link) {

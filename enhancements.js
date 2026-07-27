@@ -1,6 +1,9 @@
 (() => {
   const path=(location.pathname.split("/").pop()||"index.html").toLowerCase();
   const isHome=path===""||path==="index.html"||path==="supermatrix home.dc.html";
+  const whatsappNumber="918097147744";
+  const whatsappIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.2 21.7h-.1c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.2-.4a9.8 9.8 0 1 1 8.6 4.8Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.6a9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>';
+  const whatsappUrl=message=>`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   function addMeta(name,content,property=false){
     if(document.head.querySelector(`meta[${property?"property":"name"}="${name}"]`))return;
@@ -98,27 +101,54 @@
     button.dataset.smEnhanced="true";
     const wrap=button.parentElement,inputs=wrap.querySelectorAll("input"),textarea=wrap.querySelector("textarea");
     button.type="button";
+    button.classList.add("sm-whatsapp-cta");button.innerHTML=whatsappIcon+"Chat on WhatsApp";
     const status=document.createElement("p");status.className="sm-form-status";status.setAttribute("role","status");wrap.insertBefore(status,button.nextSibling);
     button.addEventListener("click",()=>{
       const [name,email,phone]=[...inputs].map(i=>i.value.trim()),query=textarea.value.trim();
       if(!name||!email||!phone||!query){status.textContent="Please enter your name, email, phone number, and query. Email and phone number are both required.";return}
       if(!inputs[1].checkValidity()){status.textContent="Please enter a valid email address.";inputs[1].focus();return}
       if(!inputs[2].checkValidity()){status.textContent="Please enter a valid phone number.";inputs[2].focus();return}
-      const subject=encodeURIComponent(`Website call request — ${name}`);
-      const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nQuery:\n${query}`);
-      status.textContent="Opening your email app. Please send the prepared message to complete your request.";
-      location.href=`mailto:support@supermatrix.in?subject=${subject}&body=${body}`;
+      const message=`Hello SuperMatrix, I would like assistance.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nQuery:\n${query}`;
+      status.textContent="Opening WhatsApp with your request.";
+      window.open(whatsappUrl(message),"_blank","noopener");
     });
     const consent=wrap.querySelector("p:not(.sm-form-status)");
     if(consent)consent.innerHTML='By continuing, you agree to be contacted about your query and acknowledge the <a href="privacy.html" style="color:#b9d2f1;text-decoration:underline">privacy notice</a>.';
   }
 
-  function addLegalLinks(){
-    document.querySelectorAll(".site-footer .footer-inner").forEach(footer=>{
-      if(footer.querySelector(".sm-legal-links"))return;
-      const disclosure=footer.querySelector(".disclosure");
-      disclosure?.insertAdjacentHTML("beforebegin",'<nav class="sm-legal-links" aria-label="Legal and support"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclosures.html">Disclosures</a><a href="grievance.html">Grievance Redressal</a><a href="investor-charter.html">Investor Charter</a></nav>');
+  function standardizeFooter(){
+    const footer=document.querySelector("footer");
+    if(!footer||footer.dataset.smCanonical)return;
+    footer.dataset.smCanonical="true";footer.className="site-footer sm-canonical-footer";
+    footer.innerHTML=`<div class="sm-footer-inner"><div class="sm-footer-grid">
+      <section class="sm-footer-brand-column"><a class="sm-footer-brand" href="index.html"><span><img src="./assets/supermatrix-logo.svg" alt="SuperMatrix logo"></span><strong>SuperMatrix</strong></a><p>An initiative by Sarthi Group. AMFI Registered Mutual Fund Distributor.</p><address><strong>Mumbai Office</strong><span>401, 4th Floor, Manek Plaza, 167 Vidya Nagari Marg,<br>Kalina, Santacruz (East), Mumbai – 400098</span><span><a href="tel:02226528671">022-2652-8671 / 72</a> · <a href="mailto:support@supermatrix.in">support@supermatrix.in</a></span></address><div class="sm-footer-icons"><a href="${whatsappUrl("Hello SuperMatrix, I would like assistance.")}" target="_blank" rel="noopener" aria-label="Chat with SuperMatrix on WhatsApp">${whatsappIcon}</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Manek+Plaza+Kalina+Santacruz+East+Mumbai" target="_blank" rel="noopener" aria-label="View Mumbai office on map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></a></div></section>
+      <section><h3>Solutions</h3><nav><a href="product.html?product=mutual-funds">Mutual Funds</a><a href="product.html?product=sip">SIP Investments</a><a href="product.html?product=elss">ELSS (Tax Saving)</a><a href="product.html?product=swp">Lumpsum &amp; SWP</a><a href="product.html?product=goal-planning">Goal-Based Investing</a><a href="product.html?product=pms-equity">PMS Portfolios</a></nav></section>
+      <section><h3>Tools &amp; Learning</h3><nav><a href="calculators.html?calculator=sip">SIP Calculator</a><a href="calculators.html?calculator=lumpsum">Lumpsum Calculator</a><a href="calculators.html?calculator=retirement">Retirement Planner</a><a href="calculators.html?calculator=goal">Dream Home Planner</a><a href="faq.html">Investor Education</a><a href="faq.html">FAQs</a></nav></section>
+      <section><h3>Company &amp; Support</h3><nav><a href="about.html">About Us &amp; Leadership</a><a href="faq.html">Frequently Asked Questions</a><a href="kyc.html">KYC Information</a><a href="support.html">Download Documents</a><a href="grievance.html">Grievance Redressal</a></nav></section>
+    </div><div class="sm-footer-regulatory"><p><strong>Mutual Fund investments are subject to market risks.</strong> Please read all Scheme Information Documents (SID), Key Information Memorandum (KIM), Statement of Additional Information (SAI) and other scheme-related documents carefully before investing. Past performance does not guarantee future returns; the value of investments may go up or down depending on market conditions. Evaluate suitability, risk factors, exit load, Total Expense Ratio (TER) and applicable charges before investing. We distribute Regular Plan Mutual Fund Schemes and receive commission from Asset Management Companies (AMCs) in accordance with SEBI and AMFI regulations. Direct Plans, which generally have a lower expense ratio, are available directly through the respective AMCs; we do not facilitate investments in Direct Plans.</p><div><span>AMFI Registered Mutual Fund Distributor · ARN-72348 · Valid 23 Feb 2026–22 Feb 2029.</span><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="disclosures.html">Disclosures</a><a href="investor-charter.html">Investor Charter</a></nav></div></div></div>`;
+  }
+
+  function updatePrivacyNotice(){
+    if(path!=="privacy.html")return;
+    document.querySelectorAll("p").forEach(p=>{if(p.textContent.includes("prepares an email in your email application"))p.textContent=p.textContent.replace("prepares an email in your email application","prepares a message in WhatsApp")});
+  }
+
+  function enhanceWhatsAppContacts(){
+    const contactLabels=/contact|start investing|start this sip|book a free call|talk to|ask a query|discuss your plan|send a query|request assistance|email support|ask for assistance|register|login/i;
+    document.querySelectorAll('a[href="#contact"],a[href="index.html#contact"],a[href$="/index.html#contact"],a.nav-cta[href^="mailto:"],a.button[href^="mailto:"]').forEach(link=>{
+      if(!contactLabels.test(link.textContent.trim()))return;
+      const originalLabel=link.textContent.trim();
+      const label=/^email support$/i.test(originalLabel)?"WhatsApp support":originalLabel;
+      if(label!==originalLabel)link.textContent=label;
+      link.href=whatsappUrl(`Hello SuperMatrix, I am contacting you from the website regarding: ${label}.`);
+      link.target="_blank";link.rel="noopener";link.setAttribute("aria-label",`${label} on WhatsApp`);
+      if(link.matches('.nav-cta,.button,.primary-cta')&&!link.classList.contains("sm-whatsapp-cta")){link.classList.add("sm-whatsapp-cta");link.insertAdjacentHTML("afterbegin",whatsappIcon)}
     });
+  }
+
+  function addWhatsAppButton(){
+    if(document.querySelector(".sm-whatsapp-float"))return;
+    document.body.insertAdjacentHTML("beforeend",`<a class="sm-whatsapp-float" href="${whatsappUrl("Hello SuperMatrix, I would like assistance.")}" target="_blank" rel="noopener" aria-label="Chat with SuperMatrix on WhatsApp">${whatsappIcon}<span>WhatsApp</span></a>`);
   }
 
   function addProductGuide(){
@@ -146,7 +176,7 @@
 
   function addMobileCta(){
     if(document.querySelector(".sm-mobile-cta")||path==="admin.html")return;
-    document.body.insertAdjacentHTML("beforeend",'<div class="sm-mobile-cta"><a href="calculators.html">Use calculators</a><a href="index.html#contact">Talk to the team</a></div>');
+    document.body.insertAdjacentHTML("beforeend",`<div class="sm-mobile-cta"><a href="calculators.html">Use calculators</a><a class="sm-whatsapp-cta" href="${whatsappUrl("Hello SuperMatrix, I would like to talk to the team.")}" target="_blank" rel="noopener">${whatsappIcon}Talk to the team</a></div>`);
   }
 
   function addStructuredData(){
@@ -157,9 +187,9 @@
   }
 
   function applyPageEnhancements(){
-    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();addLegalLinks();addCalculatorGuidance();
+    setupNavigation();setupKnowledgeMenu();fixHomepageClaimsAndLinks();enhanceEnquiry();standardizeFooter();addCalculatorGuidance();enhanceWhatsAppContacts();updatePrivacyNotice();
   }
-  applyPageEnhancements();addMobileCta();addStructuredData();
+  applyPageEnhancements();addMobileCta();addWhatsAppButton();addStructuredData();
   if(isHome){
     setTimeout(applyPageEnhancements,350);
     setTimeout(applyPageEnhancements,1200);

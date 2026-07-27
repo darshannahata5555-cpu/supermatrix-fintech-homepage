@@ -225,6 +225,36 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 .site-footer{background:#082b5c!important;color:#aec4df!important}
 .site-footer .footer-title,.site-footer .footer-brand{color:#fff!important}
 .site-footer .disclosure{color:#93afd0!important}
+.sm-whatsapp-cta{display:inline-flex!important;align-items:center;justify-content:center;gap:8px}
+.sm-whatsapp-cta svg{width:18px;height:18px;flex:0 0 18px;fill:currentColor}
+.sm-whatsapp-float{position:fixed;left:22px;bottom:22px;z-index:44;display:flex;align-items:center;gap:9px;padding:12px 16px;border-radius:999px;background:#20a862;color:#fff!important;font-size:13px;font-weight:800;box-shadow:0 16px 32px -16px rgba(11,82,49,.72);transition:transform .2s ease,background .2s ease}
+.sm-whatsapp-float:hover{background:#178f52;transform:translateY(-3px)}
+.sm-whatsapp-float svg{width:21px;height:21px;fill:currentColor}
+.sm-canonical-footer{background:#2c3263!important;color:#adb9d2!important}
+.sm-footer-inner{max-width:1200px;margin:0 auto;padding:72px 28px 40px}
+.sm-footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.sm-footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:18px;color:#fff!important}
+.sm-footer-brand>span{width:44px;height:44px;padding:5px;background:#fff;border-radius:11px;display:grid;place-items:center}
+.sm-footer-brand img{display:block;width:34px;height:34px;object-fit:contain}
+.sm-footer-brand>strong{font-family:"Bricolage Grotesque",sans-serif;font-size:20px}
+.sm-footer-brand-column>p{max-width:300px;margin:0;font-size:14px;line-height:1.6}
+.sm-footer-brand-column address{display:grid;gap:6px;margin-top:20px;font-style:normal;font-size:13.5px;line-height:1.7}
+.sm-footer-brand-column address>strong{color:#dde5f1}
+.sm-footer-brand-column address a{color:#adb9d2}
+.sm-footer-grid section>h3{margin:0 0 16px;color:#fff;font-size:15px;font-family:"Instrument Sans",sans-serif}
+.sm-footer-grid section>nav{display:flex;flex-direction:column;gap:10px;font-size:14px}
+.sm-footer-grid section>nav a{color:#adb9d2}
+.sm-footer-grid section>nav a:hover,.sm-footer-brand-column address a:hover{color:#fff}
+.sm-footer-icons{display:flex;gap:10px;margin-top:18px}
+.sm-footer-icons>a{width:36px;height:36px;border-radius:9px;background:#20264e;display:grid;place-items:center;color:#adb9d2}
+.sm-footer-icons svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.sm-footer-icons>a:first-child svg{fill:currentColor;stroke:none}
+.sm-footer-regulatory{border-top:1px solid #1c3448;margin-top:44px;padding-top:26px}
+.sm-footer-regulatory>p{margin:0;color:#7e9189;font-size:12px;line-height:1.7;text-align:left!important}
+.sm-footer-regulatory>p strong{color:#adb9d2}
+.sm-footer-regulatory>div{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:22px;color:#7e9189;font-size:12.5px}
+.sm-footer-regulatory nav{display:flex;gap:18px;flex-wrap:wrap}
+.sm-footer-regulatory a{color:#7e9189}
 
 @media(max-width:700px){
   #top>div,#why,#tools,#knowledge>div,#contact{padding-top:70px!important;padding-bottom:70px!important}
@@ -240,7 +270,14 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
   .solutions .card{min-height:190px;padding:18px;border:1px solid rgba(128,181,242,.28)!important;border-radius:14px}
   .page-hero>div,.calc-hero>div{padding-top:68px!important;padding-bottom:62px!important}
   .container{padding-top:64px;padding-bottom:64px}
+  .sm-whatsapp-float{left:14px;bottom:82px;width:48px;height:48px;padding:0;justify-content:center}
+  .sm-whatsapp-float span{display:none}
+  .sm-footer-inner{padding:54px 20px 110px}
+  .sm-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 26px}
+  .sm-footer-brand-column{grid-column:1/-1}
+  .sm-footer-regulatory>div{display:grid}
 }
+@media(max-width:480px){.sm-footer-grid{grid-template-columns:1fr}.sm-footer-brand-column{grid-column:auto}.sm-footer-regulatory nav{gap:12px 16px}}
 @media(min-width:701px) and (max-width:1050px){.solutions .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* Investment solution cards: high-contrast white surface on the blue section. */
