@@ -3,7 +3,7 @@
     const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=17";document.head.appendChild(stylesheet);
   }
   if (!document.querySelector('script[src*="enhancements.js"]')) {
-    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=5";enhancementScript.async=false;document.head.appendChild(enhancementScript);
+    const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=6";enhancementScript.async=false;document.head.appendChild(enhancementScript);
   }
   if (!document.querySelector('script[src$="site-config.js"]')) {
     const configScript=document.createElement("script");
