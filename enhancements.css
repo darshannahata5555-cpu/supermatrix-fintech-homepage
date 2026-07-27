@@ -270,8 +270,7 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
   .solutions .card{min-height:190px;padding:18px;border:1px solid rgba(128,181,242,.28)!important;border-radius:14px}
   .page-hero>div,.calc-hero>div{padding-top:68px!important;padding-bottom:62px!important}
   .container{padding-top:64px;padding-bottom:64px}
-  .sm-whatsapp-float{left:14px;bottom:82px;width:48px;height:48px;padding:0;justify-content:center}
-  .sm-whatsapp-float span{display:none}
+  .sm-whatsapp-float{display:none}
   .sm-footer-inner{padding:54px 20px 110px}
   .sm-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 26px}
   .sm-footer-brand-column{grid-column:1/-1}
