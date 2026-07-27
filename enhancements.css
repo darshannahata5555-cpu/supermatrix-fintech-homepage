@@ -246,10 +246,11 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 /* Investment solution cards: high-contrast white surface on the blue section. */
 #solutions a[href*="product.html"],
 .solutions .card{
-  background:linear-gradient(145deg,#fff 0%,#f1f7fe 48%,#e3effc 100%)!important;
+  background:linear-gradient(145deg,#fff 0%,#f7fbff 100%)!important;
   color:#10204a!important;
-  border-color:rgba(210,229,249,.78)!important;
-  box-shadow:0 18px 38px -24px rgba(3,35,86,.62),inset 0 1px 0 rgba(255,255,255,.85)!important;
+  border-color:#ccdcf1!important;
+  border-radius:18px!important;
+  box-shadow:0 14px 36px -30px rgba(8,70,153,.65)!important;
 }
 #solutions a[href*="product.html"] h3,
 .solutions .card h3{color:#10204a!important}
@@ -261,13 +262,13 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 .solutions .icon{
   color:#0868d5!important;
   stroke:#0868d5!important;
-  background:#e8f3ff!important;
-  border-color:#bcd5f1!important;
-  box-shadow:0 8px 18px -14px rgba(8,104,213,.65)!important;
+  background:#eaf2fc!important;
+  border-color:#ccdcf1!important;
+  box-shadow:none!important;
 }
 #solutions a[href*="product.html"]:hover,
 .solutions .card:hover{
-  background:linear-gradient(145deg,#fff 0%,#ebf4ff 45%,#d9eafd 100%)!important;
-  border-color:rgba(133,180,233,.92)!important;
-  box-shadow:0 24px 46px -26px rgba(3,55,126,.68),inset 0 1px 0 rgba(255,255,255,.95)!important;
+  background:linear-gradient(145deg,#fff 0%,#f7fbff 100%)!important;
+  border-color:#75a9e8!important;
+  box-shadow:0 24px 46px -27px rgba(5,80,180,.58),0 0 0 4px rgba(78,151,235,.08)!important;
 }
