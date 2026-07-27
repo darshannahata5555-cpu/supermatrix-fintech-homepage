@@ -85,7 +85,7 @@
     knowledgeLinks.forEach((a,i)=>a.href=destinations[i]||"faq.html");
     document.querySelectorAll("footer a").forEach(a=>{
       const label=a.textContent.trim();
-      const map={"Privacy Policy":"privacy.html","Terms":"terms.html","Disclaimer":"disclosures.html","Investor Charter":"investor-charter.html","KYC Information":"kyc.html","Download Forms":"support.html","Capital Gain Statement":"support.html","Portfolio Login":"support.html","Grievance Redressal":"grievance.html"};
+      const map={"Privacy Policy":"privacy.html","Terms":"terms.html","Disclaimer":"disclosures.html","Investor Charter":"investor-charter.html","KYC Information":"kyc.html","Download Forms":"support.html","Portfolio Login":"support.html","Grievance Redressal":"grievance.html"};
       if(map[label])a.href=map[label];
     });
     document.querySelectorAll('footer a[href="#"]').forEach(a=>{if(!a.textContent.trim())a.style.display="none"});
