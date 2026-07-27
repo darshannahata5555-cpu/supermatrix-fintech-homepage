@@ -1,7 +1,7 @@
 .sm-menu-button{display:none;border:0;background:#eaf2fc;color:#0e4fa1;width:42px;height:42px;border-radius:11px;font-size:21px;cursor:pointer}
 .sm-journey{padding:88px 28px;background:#fff}
 .sm-journey-inner{max-width:1144px;margin:auto}
-.sm-section-kicker{display:block;color:#0e4fa1;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.sm-section-kicker{display:block;color:#0e4fa1;font-size:14px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px}
 .sm-journey h2,.sm-care h2{font:700 clamp(32px,4vw,45px)/1.08 "Bricolage Grotesque",sans-serif;color:#2c3263;margin:0;max-width:700px}
 .sm-journey-intro,.sm-care-intro{color:#5e6785;line-height:1.7;max-width:700px;margin:16px 0 32px}
 .sm-step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -135,7 +135,7 @@ body{background:#fff!important;color:var(--sm-ink)}
 .button{border-radius:999px!important;background:var(--sm-blue)!important;box-shadow:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .button:hover{transform:translateY(-2px);background:var(--sm-blue-2)!important;box-shadow:0 14px 28px -18px rgba(7,87,182,.8)}
 .button.secondary{background:#fff!important;border-color:#bfd1e7!important;color:var(--sm-ink)!important}
-.eyebrow{color:var(--sm-blue)!important;font-size:11px!important;letter-spacing:.16em!important}
+.eyebrow{color:var(--sm-blue)!important;font-size:14px!important;letter-spacing:.13em!important;line-height:1.45}
 #top{background:
  linear-gradient(rgba(7,87,182,.035) 1px,transparent 1px),
  linear-gradient(90deg,rgba(7,87,182,.035) 1px,transparent 1px),
