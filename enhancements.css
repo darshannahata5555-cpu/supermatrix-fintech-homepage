@@ -246,7 +246,7 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 /* Investment solution cards: high-contrast white surface on the blue section. */
 #solutions a[href*="product.html"],
 .solutions .card{
-  background:linear-gradient(145deg,#fff 0%,#f7fbff 100%)!important;
+  background:linear-gradient(145deg,#fff 0%,#f1f7fe 48%,#e3effc 100%)!important;
   color:#10204a!important;
   border-color:rgba(210,229,249,.78)!important;
   box-shadow:0 18px 38px -24px rgba(3,35,86,.62),inset 0 1px 0 rgba(255,255,255,.85)!important;
@@ -267,7 +267,7 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 }
 #solutions a[href*="product.html"]:hover,
 .solutions .card:hover{
-  background:linear-gradient(145deg,#fff 0%,#eef6ff 100%)!important;
+  background:linear-gradient(145deg,#fff 0%,#ebf4ff 45%,#d9eafd 100%)!important;
   border-color:rgba(133,180,233,.92)!important;
   box-shadow:0 24px 46px -26px rgba(3,55,126,.68),inset 0 1px 0 rgba(255,255,255,.95)!important;
 }
