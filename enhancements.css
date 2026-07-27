@@ -278,6 +278,8 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 }
 @media(max-width:480px){.sm-footer-grid{grid-template-columns:1fr}.sm-footer-brand-column{grid-column:auto}.sm-footer-regulatory nav{gap:12px 16px}}
 @media(min-width:701px) and (max-width:1050px){.solutions .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sm-amc-logo-track>span{display:flex;align-items:center;justify-content:center;flex:0 0 150px;height:42px;padding:3px 8px}.sm-amc-logo-track img{display:block;max-width:100%;width:auto;max-height:34px;height:auto;object-fit:contain;filter:saturate(.88);transition:filter .2s ease,transform .2s ease}.sm-amc-logo-track>span:hover img{filter:saturate(1);transform:scale(1.04)}
+@media(max-width:700px){.sm-amc-logo-track{gap:28px!important;animation-duration:24s!important}.sm-amc-logo-track>span{flex-basis:126px;height:38px}.sm-amc-logo-track img{max-height:29px}}
 
 /* Investment solution cards: high-contrast white surface on the blue section. */
 #solutions a[href*="product.html"],
