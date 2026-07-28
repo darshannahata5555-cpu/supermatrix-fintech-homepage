@@ -1,6 +1,6 @@
 (() => {
   if (!document.querySelector('link[href*="enhancements.css"]')) {
-    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=21";document.head.appendChild(stylesheet);
+    const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="./enhancements.css?v=22";document.head.appendChild(stylesheet);
   }
   if (!document.querySelector('script[src*="enhancements.js"]')) {
     const enhancementScript=document.createElement("script");enhancementScript.src="./enhancements.js?v=10";enhancementScript.async=false;document.head.appendChild(enhancementScript);
