@@ -10,9 +10,24 @@
     const meta=document.createElement("meta");meta.setAttribute(property?"property":"name",name);meta.content=content;document.head.appendChild(meta);
   }
   addMeta("theme-color","#2c3263");
+  addMeta("robots",path==="admin.html"?"noindex, nofollow":"index, follow, max-image-preview:large");
   addMeta("og:site_name","SuperMatrix",true);
   addMeta("og:title",document.title,true);
   addMeta("og:description",document.querySelector('meta[name="description"]')?.content||"Explore mutual fund solutions, start your SIPs, and build wealth through disciplined investing.",true);
+  const canonicalPath=isHome?"/":`/${path}`;
+  const canonicalUrl=`https://supermatrix.in${canonicalPath}`;
+  if(!document.head.querySelector('link[rel="canonical"]')){
+    const canonical=document.createElement("link");canonical.rel="canonical";canonical.href=canonicalUrl;document.head.appendChild(canonical);
+  }
+  addMeta("og:url",canonicalUrl,true);
+  addMeta("og:type","website",true);
+  addMeta("og:image","https://supermatrix.in/assets/knowledge-centre-hero.png",true);
+  addMeta("twitter:card","summary_large_image");
+  if(isHome&&!document.head.querySelector('script[data-sm-structured-data]')){
+    const structuredData=document.createElement("script");structuredData.type="application/ld+json";structuredData.dataset.smStructuredData="true";
+    structuredData.textContent=JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"FinancialService","@id":"https://supermatrix.in/#organization","name":"SuperMatrix","alternateName":"SuperMatrix by Sarthi Group","url":"https://supermatrix.in/","logo":"https://supermatrix.in/assets/supermatrix-logo.svg","description":"AMFI-registered Mutual Fund Distributor offering mutual fund and goal-based investment solutions.","telephone":"+91-22-2652-8671","email":"support@supermatrix.in","identifier":{"@type":"PropertyValue","propertyID":"AMFI ARN","value":"ARN-72348"},"address":{"@type":"PostalAddress","streetAddress":"401, 4th Floor, Manek Plaza, 167 Vidya Nagari Marg, Kalina, Santacruz East","addressLocality":"Mumbai","postalCode":"400098","addressRegion":"Maharashtra","addressCountry":"IN"}},{"@type":"WebSite","@id":"https://supermatrix.in/#website","url":"https://supermatrix.in/","name":"SuperMatrix","publisher":{"@id":"https://supermatrix.in/#organization"},"inLanguage":"en-IN"}]});
+    document.head.appendChild(structuredData);
+  }
 
   function setupNavigation(){
     const standard=document.querySelector(".site-nav");
