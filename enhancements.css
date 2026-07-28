@@ -288,6 +288,7 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
 @media(max-width:480px){.sm-footer-grid{grid-template-columns:1fr}.sm-footer-brand-column{grid-column:auto}.sm-footer-regulatory nav{gap:12px 16px}.sm-footer-brand{padding:9px 12px 9px 9px}.sm-footer-logo-mark{width:43px;height:43px;flex-basis:43px}.sm-footer-brand img{width:41px;height:41px}.sm-footer-logo-copy strong{font-size:20px}.sm-footer-logo-copy small{font-size:9.5px}}
 @media(min-width:701px) and (max-width:1050px){.solutions .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sm-amc-logo-track{gap:22px!important}.sm-amc-logo-track>span{display:flex;align-items:center;justify-content:center;flex:0 0 132px;height:44px;padding:2px 5px}.sm-amc-logo-track img{display:block;max-width:100%;width:auto;max-height:38px;height:auto;object-fit:contain;filter:saturate(.9);transition:filter .2s ease,transform .2s ease}.sm-amc-logo-track>span:hover img{filter:saturate(1);transform:scale(1.04)}
+.sm-mobile-amc-break{display:none}
 @media(max-width:700px){.sm-amc-logo-track{gap:16px!important;animation-duration:24s!important}.sm-amc-logo-track>span{flex-basis:112px;height:40px;padding:2px 4px}.sm-amc-logo-track img{max-height:31px}}
 
 /* Investment solution cards: high-contrast white surface on the blue section. */
@@ -349,7 +350,10 @@ main>section[style*="background:#edf3fb"]{background:var(--sm-soft)!important;bo
   #top>div>div:nth-child(2)>div:first-child{order:2!important;padding:20px 18px!important;border-radius:20px!important;box-shadow:0 22px 44px -30px rgba(23,37,84,.55)!important}
   #top>div>div:nth-child(2)>div[style*="right: -14px"]{order:1!important;margin:0 0 -4px auto!important;position:relative!important;right:auto!important;top:auto!important;z-index:2}
   #top>div>div:nth-child(2)>div[style*="left: -18px"]{order:3!important;margin:-16px 0 0 10px!important;position:relative!important;left:auto!important;bottom:auto!important;z-index:2}
-  #amc-strip>div{padding:15px var(--sm-mobile-gutter)!important}
+  #amc-strip>div{padding:15px var(--sm-mobile-gutter)!important;gap:14px!important}
+  #amc-strip .sm-amc-strip-label{flex:0 0 108px;width:108px;white-space:normal!important;font-size:11px!important;line-height:1.45;letter-spacing:.045em!important}
+  #amc-strip .sm-mobile-amc-break{display:inline}
+  #amc-strip>div>div{min-width:0;flex:1 1 auto!important}
 
   /* Sections use a consistent rhythm */
   #why,#tools,#contact,.sm-journey-inner,.sm-care-inner,.container,.knowledge-library{padding-left:var(--sm-mobile-gutter)!important;padding-right:var(--sm-mobile-gutter)!important}
