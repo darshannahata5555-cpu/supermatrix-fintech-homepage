@@ -208,5 +208,6 @@
   if(isHome){
     setTimeout(applyPageEnhancements,350);
     setTimeout(applyPageEnhancements,1200);
+    setTimeout(applyPageEnhancements,2600);
   }
 })();
